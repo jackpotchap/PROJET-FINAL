@@ -7,7 +7,7 @@
 ###  Description du fichier: Class Enclos
 ####################################################################################
 import json
-from animaux import animal
+
 
 class Enclos:
     """
@@ -28,7 +28,33 @@ class Enclos:
         output = self.__dict__
         return str(output)
 
+        # code tirée d'exemple vue en classe
+    def serialiser(self, p_fichier):
+        """
+           Méthode pour sérialiser un object de la classe enclos.
+           ::param p_fichier : Le nom du fichier de l'enclos.
+        """
+        output = self.__dict__
 
+        ls_animale_t = []
+        for a in self.Ls_animaux_enclos:
+            dict_t = a.__dict__
+            dict_t["_Animal__enclos_animal"] = ""
+            ls_animale_t.append(dict_t)
+
+        output["Ls_animaux_enclos"] = ls_animale_t
+        with open(p_fichier, "w") as fichier:
+
+            json.dump(output, fichier)
+
+    def deserialiser(self, p_fichier):
+        """
+           Méthode pour désérialiser un object de la classe enclos.
+           ::param p_fichier : Le nom du fichier de l'enclos.
+        """
+
+        with open(p_fichier, "r") as fichier:
+            self.__dict__ = json.load(fichier)
     # Propriété pour id
     def _get_id_enclos(self) -> str:
         return self.__id
@@ -41,7 +67,6 @@ class Enclos:
                     self.__id = p_id_enclos
 
     Id_enclos = property(_get_id_enclos, _set_id_enclos)
-
 
 
 
