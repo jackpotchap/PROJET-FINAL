@@ -19,16 +19,16 @@ class Animal:
         """
         Constructeur avec des paramètres par défaults pour la classe animale
         """
-        self.__enclos = p_enclos
-        self.__poid = p_poid
-        self.__nom = p_nom
-        self.__espece = p_espece
-        self.__id = p_id
+        self.__enclos_animal = p_enclos
+        self.__poid_animal = p_poid
+        self.__nom_animal = p_nom
+        self.__espece_animal = p_espece
+        self.__id_animal = p_id
 
     #j'ai l'intention de faire un affichage dans une liste view donc pour me faciliter la tache je lais mis dans un dictionnaire
-    def __str__(self):
+    def __stre__(self):
         output = self.__dict__
-        output["_Animal__enclos"] = self.Enclos.__str__()
+        output["_Animal__enclos_animal"] = self.Enclos_animal.__str__()
         return str(output)
 
     #code tirée d'exemple vue en classe
@@ -38,7 +38,9 @@ class Animal:
            ::param p_fichier : Le nom du fichier de l'Animal.
         """
         with open(p_fichier , "w") as fichier:
-            json.dump(self.__dict__, fichier)
+            output = self.__dict__
+            output["_Animal__enclos_animal"] = self.Enclos_animal.__str__()
+            json.dump(output, fichier)
 
 
     def deserialiser(self, p_fichier):
@@ -52,32 +54,32 @@ class Animal:
 
 
     #Propriété pour enclo
-    def _get_enclo(self) -> Enclos:
-        return self.__enclos
+    def _get_enclo_animal(self) -> Enclos:
+        return self.__enclos_animal
     #il n'y a pas de set car cette attribut est en lecture seulement
-    Enclos = property(fget=_get_enclo)
+    Enclos_animal = property(fget=_get_enclo_animal)
 
 
     #Propriété pour poid
-    def _get_poid(self) -> float:
+    def _get_poid_animal(self) -> float:
         return self.__poid
     #Doit être supérieur à 0
-    def _set_poid(self, p_poid: float):
-        if p_poid > 0:
-            self.__poid = p_poid
+    def _set_poid_animal(self, p_poid_animal: float):
+        if p_poid_animal > 0:
+            self.__poid = p_poid_animal
 
-    Poid = property(_get_poid, _set_poid)
+    Poid_animal = property(_get_poid_animal, _set_poid_animal)
 
 
     #Propriété pour nom
-    def _get_nom(self) -> str:
+    def _get_nom_animal(self) -> str:
         return self.__nom
     #Doit être alphabétique
-    def _set_nom(self, p_nom : str):
-        if p_nom.isalpha():
-            self.__nom = p_nom
+    def _set_nom_animal(self, p_nom_animal : str):
+        if p_nom_animal.isalpha():
+            self.__nom = p_nom_animal
 
-    Nom = property(_get_nom,_set_nom)
+    Nom_animal = property(_get_nom_animal,_set_nom_animal)
 
 
     #Propriété pour espèce
@@ -92,15 +94,15 @@ class Animal:
 
 
     #Propriété pour id
-    def _get_id(self) -> str:
-        return self.__id
+    def _get_id_animal(self) -> str:
+        return self.__id_animal
     #doit commencer par "A" et être suivit de 5 chiffre
-    def _set_id(self, p_id: str):
-        if len(p_id) == 6:
-            if p_id[0] == "A":
-                if p_id[1:].isnumeric():
-                    self.__id = p_id
+    def _set_id_animal(self, p_id_animal: str):
+        if len(p_id_animal) == 6:
+            if p_id_animal[0] == "A":
+                if p_id_animal[1:].isnumeric():
+                    self.__id = p_id_animal
 
-    Id = property(_get_id, _set_id)
+    Id_animal = property(_get_id_animal, _set_id_animal)
 
 
