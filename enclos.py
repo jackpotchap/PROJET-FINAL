@@ -18,10 +18,10 @@ class Enclos:
         """
         Constructeur avec des paramètres par défaults pour la classe enclos
         """
-        self.Ecosysteme = p_ecosysteme
-        self.Ls_animaux = p_ls_animaux
-        self.Dernier_netoyage = p_dernier_netoyage
-        self.__id = p_id
+        self.Ecosysteme_enclos = p_ecosysteme
+        self.Ls_animaux_enclos = p_ls_animaux
+        self.Dernier_netoyage_enclos = p_dernier_netoyage
+        self.__id_enclos = p_id
 
     # j'ai l'intention de faire un affichage dans une liste view donc pour me faciliter la tache je lais mis dans un dictionnaire
     def __str__(self):
@@ -30,17 +30,17 @@ class Enclos:
 
 
     # Propriété pour id
-    def _get_id(self) -> str:
+    def _get_id_enclos(self) -> str:
         return self.__id
 
     # doit commencer par "E" et être suivit de 5 chiffre
-    def _set_id(self, p_id: str):
-        if len(p_id) == 6:
-            if p_id[0] == "E":
-                if p_id[1:].isnumeric():
-                    self.__id = p_id
+    def _set_id_enclos(self, p_id_enclos: str):
+        if len(p_id_enclos) == 6:
+            if p_id_enclos[0] == "E":
+                if p_id_enclos[1:].isnumeric():
+                    self.__id = p_id_enclos
 
-    Id = property(_get_id, _set_id)
+    Id_enclos = property(_get_id_enclos, _set_id_enclos)
 
 
 

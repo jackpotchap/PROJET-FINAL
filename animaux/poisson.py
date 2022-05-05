@@ -44,5 +44,3 @@ class Poisson(animal.Animal):
 
     Profondeur_moyenne = property(_get_profondeur_moyenne, _set_profondeur_moyenne)
 
-
-
