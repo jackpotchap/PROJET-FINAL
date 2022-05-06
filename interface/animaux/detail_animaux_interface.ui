@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>439</width>
+    <height>507</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="label_titre_detail_animaux_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>150</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Attribut de l'animal:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_selection_erreure_details_animaux">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>480</y>
+     <width>411</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;*Un animal doit être sélectioner au préalable&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_ecostysteme_information_detail_animaux">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>NONE</string>
+   </property>
+  </widget>
+  <widget class="QListView" name="listView_ls_animal_detail_animaux">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>180</y>
+     <width>411</width>
+     <height>291</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_titre_detail_animaux">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>-20</y>
+     <width>331</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Détail:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_id_detail_animaux">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>191</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>id de l'animal:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_id_information_detail_animaux">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>70</y>
+     <width>181</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>NONE</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_recherche_classe_detail_animaux">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>100</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Classe:</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -13,11 +13,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QPushButton" name="pushButton_cree_gestion_enclo">
+  <widget class="QPushButton" name="pushButton_cree_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>60</y>
+     <y>50</y>
      <width>281</width>
      <height>51</height>
     </rect>
@@ -31,7 +31,7 @@
     <string>Crée un nouvelle animal</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_recherche_ecosysteme_gestion_enclo">
+  <widget class="QLabel" name="label_recherche_ecosysteme_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -49,11 +49,11 @@
     <string>Classe :</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_netoyer_gestion_enclo_2">
+  <widget class="QPushButton" name="pushButton_netoyer_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>240</y>
+     <y>230</y>
      <width>281</width>
      <height>51</height>
     </rect>
@@ -67,11 +67,11 @@
     <string>Détail</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_serialiser_gestion_enclo">
+  <widget class="QPushButton" name="pushButton_serialiser_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>430</y>
+     <y>290</y>
      <width>281</width>
      <height>51</height>
     </rect>
@@ -85,7 +85,7 @@
     <string>Sérialiser</string>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_recherche_id_gestion_enclos">
+  <widget class="QLineEdit" name="lineEdit_recherche_id_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -95,7 +95,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_recherche_ecosysteme_gestion_enclos">
+  <widget class="QComboBox" name="comboBox_recherche_ecosysteme_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -105,11 +105,11 @@
     </rect>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_modif_gestion_enclo">
+  <widget class="QPushButton" name="pushButton_modif_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>120</y>
+     <y>110</y>
      <width>281</width>
      <height>51</height>
     </rect>
@@ -123,7 +123,7 @@
     <string>modifié un animal</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_recherche_gestion_enclos">
+  <widget class="QLabel" name="label_recherche_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -141,11 +141,11 @@
     <string>Recherche et Gestion Animaux</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_selection_erreure_gestion_enclos">
+  <widget class="QLabel" name="label_selection_erreure_gestion_animaux">
    <property name="geometry">
     <rect>
-     <x>500</x>
-     <y>300</y>
+     <x>490</x>
+     <y>20</y>
      <width>411</width>
      <height>41</height>
     </rect>
@@ -154,7 +154,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;*Un animal doit être sélectioner au préalable&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QListView" name="listView_recherche_gestion_enclos">
+  <widget class="QListView" name="listView_recherche_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -164,7 +164,7 @@
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label_id_crea_enclo">
+  <widget class="QLabel" name="label_id_crea_animaux">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -182,7 +182,7 @@
     <string>id de l'animal:</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_format_erreure_id_recherche_gestion_enclos">
+  <widget class="QLabel" name="label_format_erreure_id_recherche_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -195,11 +195,11 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;*L'id doit commencer par &amp;lt;&amp;lt; A &amp;gt;&amp;gt; et être suivit de 5 chiffres&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Ex: A12345&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_sup_gestion_enclo">
+  <widget class="QPushButton" name="pushButton_sup_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>180</y>
+     <y>170</y>
      <width>281</width>
      <height>51</height>
     </rect>
@@ -213,11 +213,11 @@
     <string>Supprimé un animal</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_deserialiser_gestion_enclo">
+  <widget class="QPushButton" name="pushButton_deserialiser_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>490</x>
-     <y>490</y>
+     <y>350</y>
      <width>281</width>
      <height>51</height>
     </rect>
@@ -229,6 +229,24 @@
    </property>
    <property name="text">
     <string>Désérialiser</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_menu_principale_gestion_animaux">
+   <property name="geometry">
+    <rect>
+     <x>490</x>
+     <y>510</y>
+     <width>281</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Menu principale</string>
    </property>
   </widget>
  </widget>

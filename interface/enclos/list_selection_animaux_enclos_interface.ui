@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>423</width>
+    <height>652</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLineEdit" name="lineEdit_recherche_id_gestion_enclos">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>110</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_recherche_list_animaux_enclos">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>371</width>
+     <height>91</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>20</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Recherche et Gestion Animaux</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_recherche_ecosysteme_list_animaux_enclos">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>200</y>
+     <width>191</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Classe :</string>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_recherche_ecosysteme_list_animaux_enclos">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>230</y>
+     <width>181</width>
+     <height>31</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QListView" name="listView_recherche_list_animaux_enclos">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>280</y>
+     <width>401</width>
+     <height>291</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_format_erreure_id_recherche_list_animaux_enclos">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>150</y>
+     <width>411</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;*L'id doit commencer par &amp;lt;&amp;lt; A &amp;gt;&amp;gt; et être suivit de 5 chiffres&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Ex: A12345&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_id_crea_list_animaux_enclos">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>90</y>
+     <width>191</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>14</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>id de l'animal:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_ajouter_list_animaux_enclos">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>590</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Ajouter</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_ajouter_list_animaux_enclos_2">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>590</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>Détail</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
