@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'interface/animaux/gestion_animaux_interface.ui'
+# Form implementation generated from reading ui file 'interface/animaux/gestion_animaux_folder/gestion_animaux_interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -27,12 +27,12 @@ class Ui_Dialog(object):
         font.setPointSize(14)
         self.label_recherche_ecosysteme_gestion_animaux.setFont(font)
         self.label_recherche_ecosysteme_gestion_animaux.setObjectName("label_recherche_ecosysteme_gestion_animaux")
-        self.pushButton_netoyer_gestion_animaux = QtWidgets.QPushButton(Dialog)
-        self.pushButton_netoyer_gestion_animaux.setGeometry(QtCore.QRect(490, 230, 281, 51))
+        self.pushButton_detail_gestion_animaux = QtWidgets.QPushButton(Dialog)
+        self.pushButton_detail_gestion_animaux.setGeometry(QtCore.QRect(490, 230, 281, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.pushButton_netoyer_gestion_animaux.setFont(font)
-        self.pushButton_netoyer_gestion_animaux.setObjectName("pushButton_netoyer_gestion_animaux")
+        self.pushButton_detail_gestion_animaux.setFont(font)
+        self.pushButton_detail_gestion_animaux.setObjectName("pushButton_detail_gestion_animaux")
         self.pushButton_serialiser_gestion_animaux = QtWidgets.QPushButton(Dialog)
         self.pushButton_serialiser_gestion_animaux.setGeometry(QtCore.QRect(490, 290, 281, 51))
         font = QtGui.QFont()
@@ -99,7 +99,7 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.pushButton_cree_gestion_animaux.setText(_translate("Dialog", "Crée un nouvelle animal"))
         self.label_recherche_ecosysteme_gestion_animaux.setText(_translate("Dialog", "Classe :"))
-        self.pushButton_netoyer_gestion_animaux.setText(_translate("Dialog", "Détail"))
+        self.pushButton_detail_gestion_animaux.setText(_translate("Dialog", "Détail"))
         self.pushButton_serialiser_gestion_animaux.setText(_translate("Dialog", "Sérialiser"))
         self.pushButton_modif_gestion_animaux.setText(_translate("Dialog", "modifié un animal"))
         self.label_recherche_gestion_animaux.setText(_translate("Dialog", "Recherche et Gestion Animaux"))

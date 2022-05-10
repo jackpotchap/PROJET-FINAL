@@ -4,25 +4,25 @@
 ###  Nom: Jacob Chapman
 ###  No étudiant: 2030490
 ###  No Groupe: 00001
-###  Description du fichier: Classe Create1Animaux
+###  Description du fichier: Classe DetailAnimaux
 ###################################################################################
 
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import pyqtSlot
-from interface.animaux.create1_animaux_folder import create1_animaux_interface
+from interface.animaux.detail_animaux_folder import detail_animaux_interface
 
-class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
+class DetailAnimaux(QtWidgets.QDialog, detail_animaux_interface.Ui_Dialog):
     """
-    Classe : GestionAnimaux
+    Classe : DetailAnimaux
     Héritant de Qtwidgets et de Ui_Dialogue
     """
 
     def __init__(self,parent=None):
         """Constructeur"""
 
-        super(Create1Animaux, self).__init__(parent)
+        super(DetailAnimaux, self).__init__(parent)
         self.setupUi(self)
 
-        self.setWindowTitle("Gestion de Zoo - 1er étape de la création d'un animaux")
+        self.setWindowTitle("Gestion de Zoo - Details d'un animaux")
 
 

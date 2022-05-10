@@ -49,7 +49,7 @@
     <string>Classe :</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_netoyer_gestion_animaux">
+  <widget class="QPushButton" name="pushButton_detail_gestion_animaux">
    <property name="geometry">
     <rect>
      <x>490</x>

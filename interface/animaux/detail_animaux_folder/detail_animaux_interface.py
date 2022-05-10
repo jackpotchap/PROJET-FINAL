@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'interface/animaux/detail_animaux_interface.ui'
+# Form implementation generated from reading ui file 'interface/animaux/detail_animaux_folder/detail_animaux_interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
