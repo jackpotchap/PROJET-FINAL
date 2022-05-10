@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QLabel" name="label">
+   <widget class="QLabel" name="label_titre_zoo">
     <property name="geometry">
      <rect>
       <x>320</x>
@@ -32,7 +32,7 @@
      <string>Gestion Zoo</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="pushButton_animaux">
     <property name="geometry">
      <rect>
       <x>280</x>
@@ -45,7 +45,7 @@
      <string>Animaux</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="pushButton_enclos">
     <property name="geometry">
      <rect>
       <x>280</x>
@@ -58,7 +58,7 @@
      <string>Enclos</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="pushButton_quitter">
     <property name="geometry">
      <rect>
       <x>280</x>

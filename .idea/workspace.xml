@@ -1,8 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91677364-fcfd-4c49-87b5-9025a8431faf" name="Changes" comment="toute les window initaliser en ui">
+    <list default="true" id="91677364-fcfd-4c49-87b5-9025a8431faf" name="Changes" comment="toute les window initaliser enclos en py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/create1_enclos_interface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/create1_enclos_interface.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/create2_enclos_interface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/create2_enclos_interface.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/create_enclos_interface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/deserialisation_animaux_interface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/deserialisation_animaux_interface.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/detail_animaux_interface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/detail_animaux_interface.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/gestion_animaux_interface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/gestion_animaux_interface.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_crea_interface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_crea_interface.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_deserialiser_interface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_deserialiser_interface.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/fenetre_principale_interface.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/succes_pop_up_interface.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +51,41 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../EXAMEN_INTRA_JACOB_CHAPMAN" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\info1\PycharmProjects\PROJET-FINAL\interface" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PROJET-FINAL" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -49,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651852938619</updated>
       <workItem from="1651852940478" duration="7117000" />
-      <workItem from="1652191161428" duration="1175000" />
+      <workItem from="1652191161428" duration="3444000" />
     </task>
     <task id="LOCAL-00001" summary="Finision des classes testé">
       <created>1651858871165</created>
@@ -79,7 +126,28 @@
       <option name="project" value="LOCAL" />
       <updated>1652193803717</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="toute les window initaliser animal en py">
+      <created>1652194557551</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1652194557551</updated>
+    </task>
+    <task id="LOCAL-00006" summary="toute les window initaliser animal en py">
+      <created>1652194569014</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1652194569014</updated>
+    </task>
+    <task id="LOCAL-00007" summary="toute les window initaliser enclos en py">
+      <created>1652194772643</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1652194772644</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,7 +167,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initialiation partielle du designe des window" />
     <MESSAGE value="toute les window initaliser en ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="toute les window initaliser en ui" />
+    <MESSAGE value="toute les window initaliser animal en py" />
+    <MESSAGE value="toute les window initaliser enclos en py" />
+    <option name="LAST_COMMIT_MESSAGE" value="toute les window initaliser enclos en py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -113,6 +183,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PROJET_FINAL$main.coverage" NAME="main Coverage Results" MODIFIED="1651857268078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PROJET_FINAL$main.coverage" NAME="main Coverage Results" MODIFIED="1652196297037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
