@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>439</width>
-    <height>507</height>
+    <height>525</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,7 +44,7 @@
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;*Un animal doit être sélectioner au préalable&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_ecostysteme_information_detail_animaux">
+  <widget class="QLabel" name="label_classe_information_detail_animaux">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -116,7 +116,7 @@
     <string>NONE</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_recherche_classe_detail_animaux">
+  <widget class="QLabel" name="label_classe_detail_animaux">
    <property name="geometry">
     <rect>
      <x>10</x>
