@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91677364-fcfd-4c49-87b5-9025a8431faf" name="Changes" comment="setup partielle du cheminement etre les fnetre">
+    <list default="true" id="91677364-fcfd-4c49-87b5-9025a8431faf" name="Changes" comment="setup partielle du cheminement etre les fenetre pour animaux">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface/animaux/create1_animaux_folder/create1_animaux.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/animaux/create1_animaux_folder/create1_animaux.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface/animaux/detail_animaux_folder/detail_animaux.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/animaux/detail_animaux_folder/detail_animaux.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/create2_animaux_folder/create2_animaux.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/animaux/create2_animaux_folder/create2_animaux.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_crea_folder/quitter_sans_terminer_animaux_crea_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_crea_folder/quitter_sans_terminer_animaux_crea_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_crea_folder/quitter_sans_terminer_animaux_crea_interface.ui" beforeDir="false" afterPath="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_crea_folder/quitter_sans_terminer_animaux_crea_interface.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_deserialiser_folder/quitter_sans_terminer_animaux_deserialiser_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_deserialiser_folder/quitter_sans_terminer_animaux_deserialiser_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_deserialiser_folder/quitter_sans_terminer_animaux_deserialiser_interface.ui" beforeDir="false" afterPath="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_deserialiser_folder/quitter_sans_terminer_animaux_deserialiser_interface.ui" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,14 +39,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/interface/animaux/detail_animaux_folder" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/interface/animaux/quitter_sans_terminer_animaux_crea_folder" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\info1\PycharmProjects\PROJET-FINAL\interface\animaux\quitter_sans_terminer_animaux_crea_folder" />
+      <recent name="C:\Users\info1\PycharmProjects\PROJET-FINAL\interface\animaux\create2_animaux_folder" />
       <recent name="C:\Users\info1\PycharmProjects\PROJET-FINAL\interface\animaux\detail_animaux_folder" />
       <recent name="C:\Users\info1\PycharmProjects\PROJET-FINAL\interface\animaux\create1_animaux_folder" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\info1\PycharmProjects\PROJET-FINAL\interface\animaux\detail_animaux_folder" />
       <recent name="C:\Users\info1\PycharmProjects\PROJET-FINAL\interface" />
     </key>
   </component>
@@ -83,7 +91,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651852938619</updated>
       <workItem from="1651852940478" duration="7117000" />
-      <workItem from="1652191161428" duration="5377000" />
+      <workItem from="1652191161428" duration="8139000" />
     </task>
     <task id="LOCAL-00001" summary="Finision des classes testé">
       <created>1651858871165</created>
@@ -155,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652198151140</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="setup partielle du cheminement etre les fenetre pour animaux">
+      <created>1652198656603</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1652198656603</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -179,7 +194,8 @@
     <MESSAGE value="toute les window initaliser enclos en py" />
     <MESSAGE value="redistribution des interface" />
     <MESSAGE value="setup partielle du cheminement etre les fnetre" />
-    <option name="LAST_COMMIT_MESSAGE" value="setup partielle du cheminement etre les fnetre" />
+    <MESSAGE value="setup partielle du cheminement etre les fenetre pour animaux" />
+    <option name="LAST_COMMIT_MESSAGE" value="setup partielle du cheminement etre les fenetre pour animaux" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -193,6 +209,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PROJET_FINAL$main.coverage" NAME="main Coverage Results" MODIFIED="1652198267533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PROJET_FINAL$main.coverage" NAME="main Coverage Results" MODIFIED="1652201122471" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
