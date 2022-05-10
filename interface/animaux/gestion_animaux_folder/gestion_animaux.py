@@ -19,7 +19,8 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
 
     def __init__(self, parent=None):
         """Constructeur"""
-        super(FenetrePrincipale, self).__init__(parent)
+
+        super(GestionAnimaux, self).__init__(parent)
         self.setupUi(self)
 
         self.setWindowTitle("Gestion de Zoo - Gestion animaux")

@@ -10,7 +10,8 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import pyqtSlot
 from interface.fenetre_principale_folder import fenetre_principale_interface
-from interface.animaux import gestion_animaux_folder
+from interface.animaux.gestion_animaux_folder import gestion_animaux
+from interface.enclos.gestion_enclos_interface import gestion_enclos
 
 class FenetrePrincipale(QtWidgets.QMainWindow, fenetre_principale_interface.Ui_MainWindow):
     """
@@ -30,5 +31,19 @@ class FenetrePrincipale(QtWidgets.QMainWindow, fenetre_principale_interface.Ui_M
         """
         fonction pour ouvrire la fenêtre de la section animaux du zoo
         """
-        gestion_animaux_folder.gestion_animaux.
-        self.close()
+
+        gestion_A_form = gestion_animaux.GestionAnimaux()
+
+        gestion_A_form.show()
+        gestion_A_form.exec()
+
+    @pyqtSlot()
+    def on_pushButton_enclos_clicked(self):
+        """
+        fonction pour ouvrire la fenêtre de la enclos du zoo
+        """
+
+        gestion_E_form = gestion_enclos.Gestionenclos()
+
+        gestion_E_form.show()
+        gestion_E_form.exec()
