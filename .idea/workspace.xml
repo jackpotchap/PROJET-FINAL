@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="91677364-fcfd-4c49-87b5-9025a8431faf" name="Changes" comment="initialiation partielle du designe des window" />
+    <list default="true" id="91677364-fcfd-4c49-87b5-9025a8431faf" name="Changes" comment="toute les window initaliser en ui">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,6 +49,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651852938619</updated>
       <workItem from="1651852940478" duration="7117000" />
+      <workItem from="1652191161428" duration="1175000" />
     </task>
     <task id="LOCAL-00001" summary="Finision des classes testé">
       <created>1651858871165</created>
@@ -62,7 +65,21 @@
       <option name="project" value="LOCAL" />
       <updated>1651863531065</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="initialiation partielle du designe des window">
+      <created>1652193577725</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1652193577725</updated>
+    </task>
+    <task id="LOCAL-00004" summary="toute les window initaliser en ui">
+      <created>1652193803717</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652193803717</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -81,7 +98,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initialiation partielle du designe des window" />
-    <option name="LAST_COMMIT_MESSAGE" value="initialiation partielle du designe des window" />
+    <MESSAGE value="toute les window initaliser en ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="toute les window initaliser en ui" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
