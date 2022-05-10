@@ -12,6 +12,10 @@ from PyQt5.QtCore import pyqtSlot
 from interface.animaux.gestion_animaux_folder import gestion_animaux_interface
 from interface.animaux.create1_animaux_folder import create1_animaux
 from interface.animaux.detail_animaux_folder import detail_animaux
+from interface.animaux.deserialisation_animaux_folder import deserialisation_animaux
+
+
+
 class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
     """
     Classe : GestionAnimaux
@@ -63,6 +67,17 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
 
         detail_A_form.show()
         detail_A_form.exec()
+
+    @pyqtSlot()
+    def on_pushButton_deserialiser_gestion_animaux_clicked(self):
+        """
+                fonction pour ouvrire la fenêtre de detail d'animaux
+        """
+        print(1)
+        Deser_A_form = deserialisation_animaux.DeserialisationAnimaux()
+
+        Deser_A_form.show()
+        Deser_A_form.exec()
 
     def on_pushButton_menu_principale_gestion_animaux_clicked(self):
         """
