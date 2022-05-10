@@ -35,6 +35,7 @@ def main():
     """
     # Instancier une application et une fenetre principale
     app = QtWidgets.QApplication(sys.argv)
+
     form = fenetre_principale.FenetrePrincipale()
     # Afficher la fenêtre principale
     form.show()

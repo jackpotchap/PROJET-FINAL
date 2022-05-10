@@ -40,6 +40,7 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
         crea1_A_form.show()
         crea1_A_form.exec()
 
+
     @pyqtSlot()
     def on_pushButton_modif_gestion_animaux_clicked(self):
         """
@@ -50,6 +51,7 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
 
         crea1_A_form.show()
         crea1_A_form.exec()
+
 
     @pyqtSlot()
     def on_pushButton_detail_gestion_animaux_clicked(self):
