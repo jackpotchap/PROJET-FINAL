@@ -91,7 +91,7 @@ class Ui_Dialog(object):
         self.label_selection_erreure_gestion_enclos.setGeometry(QtCore.QRect(500, 20, 411, 41))
         self.label_selection_erreure_gestion_enclos.setObjectName("label_selection_erreure_gestion_enclos")
         self.pushButton_menu_principale_gestion_enclos = QtWidgets.QPushButton(Dialog)
-        self.pushButton_menu_principale_gestion_enclos.setGeometry(QtCore.QRect(510, 490, 281, 51))
+        self.pushButton_menu_principale_gestion_enclos.setGeometry(QtCore.QRect(500, 490, 281, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.pushButton_menu_principale_gestion_enclos.setFont(font)

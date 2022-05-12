@@ -33,3 +33,8 @@ class DetailEnclos(QtWidgets.QDialog, detail_enclos_interface.Ui_Dialog):
 
         ajoute_A_form.show()
         ajoute_A_form.exec()
+
+    @pyqtSlot()
+    def on_pushButton_supprimer_animaux_detail_enclo_clicked(self):
+        """Fonction pour supirmer un animaux a l'enclos """
+        pass

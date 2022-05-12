@@ -12,7 +12,7 @@ from PyQt5.QtCore import pyqtSlot
 from interface.enclos.gestion_enclos_folder import gestion_enclos_interface
 from interface.enclos.create_enclos_folder import create_enclos
 from interface.enclos.detail_enclos_folder import detail_enclos
-
+from interface.enclos.deserialisation_enclos_folder import deserialisation_enclos
 
 class GestionEnclos(QtWidgets.QDialog, gestion_enclos_interface.Ui_Dialog):
     """
@@ -61,6 +61,17 @@ class GestionEnclos(QtWidgets.QDialog, gestion_enclos_interface.Ui_Dialog):
 
         detail_E_form.show()
         detail_E_form.exec()
+
+    @pyqtSlot()
+    def on_pushButton_deserialiser_gestion_enclo_clicked(self):
+        """
+                fonction pour ouvrire la fenêtre de detail d'enclos
+        """
+        print(1)
+        Deser_E_form = deserialisation_enclos.DeserialisationEnclos()
+
+        Deser_E_form.show()
+        Deser_E_form.exec()
 
     @pyqtSlot()
     def on_pushButton_menu_principale_gestion_enclos_clicked(self):
