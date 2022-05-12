@@ -43,8 +43,8 @@ class FenetrePrincipale(QtWidgets.QMainWindow, fenetre_principale_interface.Ui_M
         fonction pour ouvrire la fenêtre de la enclos du zoo
         """
 
-        gestion_E_form = gestion_enclos.GestionEnclos()
-
+        gestion_E_form = gestion_enclos.GestionEnclos(self)
+        self.hide()
         gestion_E_form.show()
         gestion_E_form.exec()
 

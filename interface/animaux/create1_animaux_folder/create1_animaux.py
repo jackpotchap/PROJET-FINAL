@@ -62,6 +62,8 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
 
     #code proveneant de la documentation officiel PyQt5 https://pythonpyqt.com/pyqt-message-box/
     def closeEvent(self, event):
+
+        #j'ai tenter de le traduire sans resulta le mieux que j'ai trouver pour une solution de pyqt3.5
         if not self.bruteForceClose:
             reply = QMessageBox.question(self, "Quit", "Tous changement effectuez seras perdu.",
                                          QMessageBox.Yes | QMessageBox.No, QMessageBox.No)

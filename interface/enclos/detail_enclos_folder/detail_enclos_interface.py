@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'interface/enclos/detail_enclos_interface.ui'
+# Form implementation generated from reading ui file 'interface/enclos/detail_enclos_folder/detail_enclos_interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -57,18 +57,18 @@ class Ui_Dialog(object):
         font.setPointSize(14)
         self.label_n_detail_enclo_3.setFont(font)
         self.label_n_detail_enclo_3.setObjectName("label_n_detail_enclo_3")
-        self.pushButton_cree_gestion_enclo = QtWidgets.QPushButton(Dialog)
-        self.pushButton_cree_gestion_enclo.setGeometry(QtCore.QRect(470, 320, 51, 51))
+        self.pushButton_ajouter_animaux_detail_enclo = QtWidgets.QPushButton(Dialog)
+        self.pushButton_ajouter_animaux_detail_enclo.setGeometry(QtCore.QRect(470, 320, 51, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.pushButton_cree_gestion_enclo.setFont(font)
-        self.pushButton_cree_gestion_enclo.setObjectName("pushButton_cree_gestion_enclo")
-        self.pushButton_cree_gestion_enclo_2 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_cree_gestion_enclo_2.setGeometry(QtCore.QRect(470, 380, 51, 51))
+        self.pushButton_ajouter_animaux_detail_enclo.setFont(font)
+        self.pushButton_ajouter_animaux_detail_enclo.setObjectName("pushButton_ajouter_animaux_detail_enclo")
+        self.pushButton_supprimer_animaux_detail_enclo = QtWidgets.QPushButton(Dialog)
+        self.pushButton_supprimer_animaux_detail_enclo.setGeometry(QtCore.QRect(470, 380, 51, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.pushButton_cree_gestion_enclo_2.setFont(font)
-        self.pushButton_cree_gestion_enclo_2.setObjectName("pushButton_cree_gestion_enclo_2")
+        self.pushButton_supprimer_animaux_detail_enclo.setFont(font)
+        self.pushButton_supprimer_animaux_detail_enclo.setObjectName("pushButton_supprimer_animaux_detail_enclo")
         self.label_selection_erreure_details_enclos = QtWidgets.QLabel(Dialog)
         self.label_selection_erreure_details_enclos.setGeometry(QtCore.QRect(50, 540, 411, 41))
         self.label_selection_erreure_details_enclos.setObjectName("label_selection_erreure_details_enclos")
@@ -87,6 +87,6 @@ class Ui_Dialog(object):
         self.label_n_detail_enclo_2.setText(_translate("Dialog", "Dernier nettoyage:"))
         self.label_ecostysteme_information_detail_enclo.setText(_translate("Dialog", "NONE"))
         self.label_n_detail_enclo_3.setText(_translate("Dialog", "List animaux:"))
-        self.pushButton_cree_gestion_enclo.setText(_translate("Dialog", "+"))
-        self.pushButton_cree_gestion_enclo_2.setText(_translate("Dialog", "-"))
+        self.pushButton_ajouter_animaux_detail_enclo.setText(_translate("Dialog", "+"))
+        self.pushButton_supprimer_animaux_detail_enclo.setText(_translate("Dialog", "-"))
         self.label_selection_erreure_details_enclos.setText(_translate("Dialog", "<html><head/><body><p><span style=\" color:#ff0000;\">*Un animal doit être sélectioner au préalable</span></p><p><br/></p></body></html>"))

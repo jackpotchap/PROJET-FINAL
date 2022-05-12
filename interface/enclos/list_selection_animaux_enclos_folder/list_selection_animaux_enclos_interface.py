@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'interface/enclos/list_selection_animaux_enclos_interface.ui'
+# Form implementation generated from reading ui file 'interface/enclos/list_selection_animaux_enclos_folder/list_selection_animaux_enclos_interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -51,12 +51,12 @@ class Ui_Dialog(object):
         font.setPointSize(12)
         self.pushButton_ajouter_list_animaux_enclos.setFont(font)
         self.pushButton_ajouter_list_animaux_enclos.setObjectName("pushButton_ajouter_list_animaux_enclos")
-        self.pushButton_ajouter_list_animaux_enclos_2 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_ajouter_list_animaux_enclos_2.setGeometry(QtCore.QRect(250, 590, 161, 51))
+        self.pushButton_detail_list_animaux_enclos = QtWidgets.QPushButton(Dialog)
+        self.pushButton_detail_list_animaux_enclos.setGeometry(QtCore.QRect(250, 590, 161, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.pushButton_ajouter_list_animaux_enclos_2.setFont(font)
-        self.pushButton_ajouter_list_animaux_enclos_2.setObjectName("pushButton_ajouter_list_animaux_enclos_2")
+        self.pushButton_detail_list_animaux_enclos.setFont(font)
+        self.pushButton_detail_list_animaux_enclos.setObjectName("pushButton_detail_list_animaux_enclos")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -69,4 +69,4 @@ class Ui_Dialog(object):
         self.label_format_erreure_id_recherche_list_animaux_enclos.setText(_translate("Dialog", "<html><head/><body><p><span style=\" color:#ff0000;\">*L\'id doit commencer par &lt;&lt; A &gt;&gt; et être suivit de 5 chiffres</span></p><p><span style=\" color:#ff0000;\">Ex: A12345</span></p><p><br/></p></body></html>"))
         self.label_id_crea_list_animaux_enclos.setText(_translate("Dialog", "id de l\'animal:"))
         self.pushButton_ajouter_list_animaux_enclos.setText(_translate("Dialog", "Ajouter"))
-        self.pushButton_ajouter_list_animaux_enclos_2.setText(_translate("Dialog", "Détail"))
+        self.pushButton_detail_list_animaux_enclos.setText(_translate("Dialog", "Détail"))

@@ -128,7 +128,7 @@
     <string>Ajouter</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_ajouter_list_animaux_enclos_2">
+  <widget class="QPushButton" name="pushButton_detail_list_animaux_enclos">
    <property name="geometry">
     <rect>
      <x>250</x>

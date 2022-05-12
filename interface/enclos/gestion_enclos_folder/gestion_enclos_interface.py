@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'interface/enclos/gestion_enclos_interface.ui'
+# Form implementation generated from reading ui file 'interface/enclos/gestion_enclos_folder/gestion_enclos_interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -81,21 +81,21 @@ class Ui_Dialog(object):
         font.setPointSize(12)
         self.pushButton_netoyer_gestion_enclo.setFont(font)
         self.pushButton_netoyer_gestion_enclo.setObjectName("pushButton_netoyer_gestion_enclo")
-        self.pushButton_netoyer_gestion_enclo_2 = QtWidgets.QPushButton(Dialog)
-        self.pushButton_netoyer_gestion_enclo_2.setGeometry(QtCore.QRect(500, 290, 281, 51))
+        self.pushButton_detail_gestion_enclo = QtWidgets.QPushButton(Dialog)
+        self.pushButton_detail_gestion_enclo.setGeometry(QtCore.QRect(500, 290, 281, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.pushButton_netoyer_gestion_enclo_2.setFont(font)
-        self.pushButton_netoyer_gestion_enclo_2.setObjectName("pushButton_netoyer_gestion_enclo_2")
+        self.pushButton_detail_gestion_enclo.setFont(font)
+        self.pushButton_detail_gestion_enclo.setObjectName("pushButton_detail_gestion_enclo")
         self.label_selection_erreure_gestion_enclos = QtWidgets.QLabel(Dialog)
         self.label_selection_erreure_gestion_enclos.setGeometry(QtCore.QRect(500, 20, 411, 41))
         self.label_selection_erreure_gestion_enclos.setObjectName("label_selection_erreure_gestion_enclos")
-        self.pushButton_menu_principale_gestion_animaux = QtWidgets.QPushButton(Dialog)
-        self.pushButton_menu_principale_gestion_animaux.setGeometry(QtCore.QRect(510, 490, 281, 51))
+        self.pushButton_menu_principale_gestion_enclos = QtWidgets.QPushButton(Dialog)
+        self.pushButton_menu_principale_gestion_enclos.setGeometry(QtCore.QRect(510, 490, 281, 51))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.pushButton_menu_principale_gestion_animaux.setFont(font)
-        self.pushButton_menu_principale_gestion_animaux.setObjectName("pushButton_menu_principale_gestion_animaux")
+        self.pushButton_menu_principale_gestion_enclos.setFont(font)
+        self.pushButton_menu_principale_gestion_enclos.setObjectName("pushButton_menu_principale_gestion_enclos")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -113,6 +113,6 @@ class Ui_Dialog(object):
         self.pushButton_serialiser_gestion_enclo.setText(_translate("Dialog", "Sérialiser"))
         self.pushButton_deserialiser_gestion_enclo.setText(_translate("Dialog", "Désérialiser"))
         self.pushButton_netoyer_gestion_enclo.setText(_translate("Dialog", "Nettoyage"))
-        self.pushButton_netoyer_gestion_enclo_2.setText(_translate("Dialog", "Détail"))
+        self.pushButton_detail_gestion_enclo.setText(_translate("Dialog", "Détail"))
         self.label_selection_erreure_gestion_enclos.setText(_translate("Dialog", "<html><head/><body><p><span style=\" color:#ff0000;\">*Un enclos doit être sélectioner au préalable</span></p><p><br/></p></body></html>"))
-        self.pushButton_menu_principale_gestion_animaux.setText(_translate("Dialog", "Menu principale"))
+        self.pushButton_menu_principale_gestion_enclos.setText(_translate("Dialog", "Menu principale"))

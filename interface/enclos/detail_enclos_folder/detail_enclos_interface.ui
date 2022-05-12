@@ -152,7 +152,7 @@
     <string>List animaux:</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_cree_gestion_enclo">
+  <widget class="QPushButton" name="pushButton_ajouter_animaux_detail_enclo">
    <property name="geometry">
     <rect>
      <x>470</x>
@@ -170,7 +170,7 @@
     <string>+</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_cree_gestion_enclo_2">
+  <widget class="QPushButton" name="pushButton_supprimer_animaux_detail_enclo">
    <property name="geometry">
     <rect>
      <x>470</x>
