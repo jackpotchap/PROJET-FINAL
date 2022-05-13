@@ -31,7 +31,7 @@ class Poisson(animal.Animal):
         if p_longueur_des_nageoire > 0:
             self.__longueur_des_nageoire = p_longueur_des_nageoire
 
-    longueur_des_nageoire = property(_get_longueur_des_nageoire, _set_longueur_des_nageoire)
+    Longueur_des_nageoire = property(_get_longueur_des_nageoire, _set_longueur_des_nageoire)
 
     # Propriété pour profondeur_moyenne
     def _get_profondeur_moyenne(self) -> float:
@@ -40,7 +40,7 @@ class Poisson(animal.Animal):
     # Doit être supérieur à 0
     def _set_profondeur_moyenne(self, p_profondeur_moyenne: float):
         if p_profondeur_moyenne > 0:
-            self.__p_profondeur_moyenne = p_profondeur_moyenne
+            self.__profondeur_moyenne = p_profondeur_moyenne
 
     Profondeur_moyenne = property(_get_profondeur_moyenne, _set_profondeur_moyenne)
 

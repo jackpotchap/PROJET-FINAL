@@ -20,7 +20,7 @@ class Reptile(animal.Animal):
             Constructeur avec des paramètres par défaults pour la classe Reptile qui hérite d'animale
         """
         animal.Animal.__init__(self, p_enclos, p_poid, p_nom, p_espece, p_id)
-        self.Couleur_de_peau = p_couleur_de_peau
+        self.__couleur_de_peau = p_couleur_de_peau
         self.__temperature = p_temperature
 
     # Propriété pour temperature
@@ -33,7 +33,16 @@ class Reptile(animal.Animal):
         if p_temperature > 0:
             self.__temperature = p_temperature
 
-    temperature = property(_get_temperature, _set_temperature)
+    Temperature = property(_get_temperature, _set_temperature)
 
+    # Propriété pour couleur_de_peau
+    def _get_couleur_de_peau(self) -> str:
+        return self.__couleur_de_peau
 
+    # Doit être supérieur à 0
+    def _set_couleur_de_peau(self, p_couleur_de_peau: str):
 
+        if p_couleur_de_peau.isalpha():
+            self.__couleur_de_peau = p_couleur_de_peau
+
+    Couleur_de_peau = property(_get_couleur_de_peau, _set_couleur_de_peau)

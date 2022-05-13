@@ -139,7 +139,7 @@
     <string>Enclos:</string>
    </property>
   </widget>
-  <widget class="QComboBox" name="comboBox_enclos_crea1_enclos">
+  <widget class="QComboBox" name="comboBox_enclos_crea2_enclos">
    <property name="geometry">
     <rect>
      <x>270</x>

@@ -31,7 +31,7 @@ class Oiseau(animal.Animal):
         if p_longeur_des_ailes > 0:
             self.__longeur_des_ailes = p_longeur_des_ailes
 
-    temperature = property(_get_longeur_des_ailes, _set_longeur_des_ailes)
+    Longeur_des_ailes = property(_get_longeur_des_ailes, _set_longeur_des_ailes)
 
     # Propriété pour longeur_bec
     def _get_longeur_bec(self) -> float:
@@ -42,4 +42,4 @@ class Oiseau(animal.Animal):
         if p_longeur_bec > 0:
             self.__longeur_bec = p_longeur_bec
 
-    longeur_bec = property(_get_longeur_bec, _set_longeur_bec)
+    Longeur_bec = property(_get_longeur_bec, _set_longeur_bec)

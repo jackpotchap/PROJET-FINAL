@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'interface/animaux/create2_enclos_interface.ui'
+# Form implementation generated from reading ui file 'interface/animaux/create2_animaux_folder/create2_animaux_interface.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -60,9 +60,9 @@ class Ui_Dialog(object):
         font.setPointSize(14)
         self.label_enclos_crea2_animaux.setFont(font)
         self.label_enclos_crea2_animaux.setObjectName("label_enclos_crea2_animaux")
-        self.comboBox_enclos_crea1_enclos = QtWidgets.QComboBox(Dialog)
-        self.comboBox_enclos_crea1_enclos.setGeometry(QtCore.QRect(270, 40, 231, 31))
-        self.comboBox_enclos_crea1_enclos.setObjectName("comboBox_enclos_crea1_enclos")
+        self.comboBox_enclos_crea2_enclos = QtWidgets.QComboBox(Dialog)
+        self.comboBox_enclos_crea2_enclos.setGeometry(QtCore.QRect(270, 40, 231, 31))
+        self.comboBox_enclos_crea2_enclos.setObjectName("comboBox_enclos_crea2_enclos")
         self.pushButton_retour_crea2_animaux = QtWidgets.QPushButton(Dialog)
         self.pushButton_retour_crea2_animaux.setGeometry(QtCore.QRect(270, 320, 241, 51))
         self.pushButton_retour_crea2_animaux.setObjectName("pushButton_retour_crea2_animaux")

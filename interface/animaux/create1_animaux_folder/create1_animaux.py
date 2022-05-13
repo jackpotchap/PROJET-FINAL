@@ -10,10 +10,23 @@
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtCore import pyqtSlot
+import inventaire
 from interface.animaux.create1_animaux_folder import create1_animaux_interface
 from interface.animaux.create2_animaux_folder import create2_animaux
 from interface.animaux.quitter_sans_terminer_animaux_crea_folder import quitter_sans_terminer_animaux_crea
 from animaux import animal
+from animaux import reptile, poisson, oiseau, animal
+
+
+def cacher_lables_erreure(window):
+    """
+    Fonction pour cacher les labels erreure du parametre window
+    : window: la fenettre a chacher les labels erreure de...
+    """
+    window.label_existant_erreure_id_crea1_animaux.setVisible(False)
+    window.label_format_erreure_id_crea1_enclos.setVisible(False)
+
+
 
 class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
     """
@@ -21,7 +34,7 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
     Héritant de Qtwidgets et de Ui_Dialogue
     """
 
-    def __init__(self,parent=None):
+    def __init__(self, p_animal = None,parent=None):
         """Constructeur"""
 
         super(Create1Animaux, self).__init__(parent)
@@ -29,23 +42,60 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
 
         self.setWindowTitle("Gestion de Zoo - 1er étape de la création d'un animaux")
 
-        self.animaux = None
+        cacher_lables_erreure(self)
+
+        #mettre toute les classe disponible dans la combo box
+        for classe in inventaire.dict_classe_animaux:
+            self.comboBox_classe_crea1_animaux.addItem(classe)
 
         #pour eviter le ette vous sure de vouloir quitter
         self.bruteForceClose = False
+
+        #si l'animal est = a none cela veut dire que l'utilisateur shouaite en crée un
+        #alors que si non il veut le modifier
+        self.animal = p_animal
+        if self.animal != None:
+            self.comboBox_classe_crea1_animaux.setCurrentText(self.animal.Espece)
+            self.lineEdit_id_crea1_animaux.setText(self.animal.Id_animal)
+
     @pyqtSlot()
     def on_pushButton_suivant_crea1_animaux_clicked(self):
         """
                 fonction pour ouvrire la 2e fenêtre de création d'animaux
+                et également commencer la création de l'animal et les premiere vérification
         """
+        #pour que les erreure ayant été corriger disparaisse apres chaque essaie
+        cacher_lables_erreure(self)
 
-        crea2_A_form = create2_animaux.Create2Animaux(p_caller = self)
+
+        #Vérifier si l'id existe déja
+        id_animal = self.lineEdit_id_crea1_animaux.text()
+        self.classe = self.comboBox_classe_crea1_animaux.currentText()
+        trouver = False
+        for a in inventaire.ls_animaux:
+
+            if a.Id_animal == id_animal:
+                trouver = True
+
+        if trouver:
+            self.label_existant_erreure_id_crea1_animaux.setVisible(True)
+        else:
+            #vérifier si l'id est du bon format en l'attribuant a l'animal
+            # Vas grasse a la classe préalablement selectionner crée automatiquement un animal vide
+            self.animal = inventaire.dict_classe_animaux[self.classe]()
+            self.animal.Id_animal = id_animal
+            if self.animal.Id_animal == "":
+                self.label_format_erreure_id_crea1_enclos.setVisible(True)
+            else:
+
+                crea2_A_form = create2_animaux.Create2Animaux(p_caller = self)
 
 
-        crea2_A_form.show()
-        crea2_A_form.exec()
-        if self.bruteForceClose:
-            self.close()
+                crea2_A_form.show()
+                crea2_A_form.exec()
+
+                if self.bruteForceClose:
+                    self.close()
 
     @pyqtSlot()
     def on_pushButton_annulez_crea1_animaux_clicked(self):

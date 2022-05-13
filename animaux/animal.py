@@ -20,7 +20,7 @@ class Animal:
         Constructeur avec des paramètres par défaults pour la classe animale
         """
         self.__enclos_animal = p_enclos
-        print(self.__enclos_animal.Id_enclos)
+
         self.__poid_animal = p_poid
         self.__nom_animal = p_nom
         self.__espece_animal = p_espece
