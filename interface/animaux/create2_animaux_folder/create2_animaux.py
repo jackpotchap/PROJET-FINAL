@@ -115,15 +115,18 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
             bon_format = False
         else:
             self.animal.Poid_animal = float(poid)
-            if self.animal.Poid_animal == float(poid):
+            if self.animal.Poid_animal != float(poid):
+
                 self.label_sup_de_0_erreure_poid_crea2_animaux.setVisible(True)
                 bon_format = False
 
-        if self.animal.Nom_animal == nom:
+        self.animal.Nom_animal = nom
+        if self.animal.Nom_animal != nom:
             self.label_alpha_only_erreure_nom_crea2_animaux.setVisible(True)
             bon_format = False
 
-        if self.animal.Espece == espece:
+        self.animal.Nom_animal = espece
+        if self.animal.Espece != espece:
             self.label_alpha_only_erreure_espece_crea2_animaux.setVisible(True)
 
         self.animal.Enclos_animal =enclos

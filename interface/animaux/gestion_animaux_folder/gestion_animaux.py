@@ -8,12 +8,23 @@
 ###################################################################################
 
 from PyQt5 import QtWidgets
-from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtCore import pyqtSlot, QEvent
+from PyQt5.QtGui import QStandardItemModel, QStandardItem
+
+import inventaire
 from interface.animaux.gestion_animaux_folder import gestion_animaux_interface
 from interface.animaux.create1_animaux_folder import create1_animaux
 from interface.animaux.detail_animaux_folder import detail_animaux
 from interface.animaux.deserialisation_animaux_folder import deserialisation_animaux
 
+def refresh_list_view(window, list_animaux):
+    #code inspirer d'information vue en classe
+    model = QStandardItemModel()
+    window.listView_recherche_gestion_animaux.setModel(model)
+    for a in list_animaux:
+        print(str(type(a)))
+        item = QStandardItem(a.Id_animal + " - " + a.Nom_animal + " - " + inventaire.dict_translate_object_to_dict[type(a)])
+        model.appendRow(item)
 
 
 class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
@@ -30,9 +41,17 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
         super(GestionAnimaux, self).__init__(parent)
         self.setupUi(self)
 
+        self.lineEdit_recherche_id_gestion_animaux.installEventFilter(self)
         self.setWindowTitle("Gestion de Zoo - Gestion animaux")
-
+        refresh_list_view(self, inventaire.ls_animaux)
         self.caller = p_caller
+
+    def eventFilter(self, source, event):
+        if (event.type() == QEvent.KeyPress and
+                source is self.lineEdit_recherche_id_gestion_animaux):
+            refresh_list_view(self,)
+        return super(GestionAnimaux, self).eventFilter(source, event)
+
     @pyqtSlot()
     def on_pushButton_cree_gestion_animaux_clicked(self):
         """
@@ -43,6 +62,7 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
 
         crea1_A_form.show()
         crea1_A_form.exec()
+        refresh_list_view(self, inventaire.ls_animaux)
 
 
     @pyqtSlot()
@@ -73,7 +93,7 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
         """
                 fonction pour ouvrire la fenêtre de detail d'animaux
         """
-        print(1)
+
         Deser_A_form = deserialisation_animaux.DeserialisationAnimaux()
 
         Deser_A_form.show()

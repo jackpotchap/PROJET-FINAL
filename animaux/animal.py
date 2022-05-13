@@ -78,6 +78,7 @@ class Animal:
         return self.__poid_animal
     #Doit être supérieur à 0
     def _set_poid_animal(self, p_poid_animal: float):
+        print(p_poid_animal > 0)
         if p_poid_animal > 0:
             self.__poid_animal = p_poid_animal
 
