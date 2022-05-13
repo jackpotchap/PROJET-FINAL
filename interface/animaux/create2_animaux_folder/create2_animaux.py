@@ -20,7 +20,7 @@ def cacher_lables_erreure(window):
     Fonction pour cacher les labels erreure du parametre window
     : window: la fenettre a chacher les labels erreure de...
     """
-    window.label_sup_de_0_erreure_id_crea2_animaux.setVisible(False)
+    window.label_sup_de_0_erreure_poid_crea2_animaux.setVisible(False)
     window.label_alpha_only_erreure_nom_crea2_animaux.setVisible(False)
     window.label_alpha_only_erreure_espece_crea2_animaux.setVisible(False)
     window.label_erreure_cara1_crea2_animaux.setVisible(False)
@@ -107,11 +107,33 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
         poid = self.lineEdit_poid_crea2_animaux.text()
         nom = self.lineEdit_nom_crea2_animaux.text()
         enclos = inventaire.ls_enclos[self.comboBox_enclos_crea2_enclos.currentIndex()]
+        espece = self.lineEdit_espece_crea2_animaux.text()
+        try:
+            float(poid)
+        except:
+            self.label_sup_de_0_erreure_poid_crea2_animaux.setVisible(True)
+            bon_format = False
+        else:
+            self.animal.Poid_animal = float(poid)
+            if self.animal.Poid_animal == float(poid):
+                self.label_sup_de_0_erreure_poid_crea2_animaux.setVisible(True)
+                bon_format = False
+
+        if self.animal.Nom_animal == nom:
+            self.label_alpha_only_erreure_nom_crea2_animaux.setVisible(True)
+            bon_format = False
+
+        if self.animal.Espece == espece:
+            self.label_alpha_only_erreure_espece_crea2_animaux.setVisible(True)
+
+        self.animal.Enclos_animal =enclos
+
+
 
 
         cara1 = self.lineEdit_cara1_crea2_animaux.text()
         cara2 = self.lineEdit_cara2_crea2_animaux.text()
-        print(cara1, cara2)
+
         if self.caller.classe == "Reptile":
             self.label_erreure_cara2_crea2_animaux.setText(colorier_en_rouge("*Doit uniquement contenir des lettres"))
             self.label_erreure_cara1_crea2_animaux.setText(colorier_en_rouge("*Doit être un nombre supérieur a 0"))
@@ -127,31 +149,33 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
                     bon_format = False
 
             self.animal.Couleur_de_peau = cara2
-            if self.animal.Couleur_de_peau != cara2:
+            if self.animal.Couleur_de_peau != cara2 and cara2 != "":
                 self.label_erreure_cara2_crea2_animaux.setVisible(True)
                 bon_format = False
         elif self.caller.classe == "Poisson":
             self.label_erreure_cara2_crea2_animaux.setText(colorier_en_rouge("*Doit être un nombre supérieur a 0"))
             self.label_erreure_cara1_crea2_animaux.setText(colorier_en_rouge("*Doit être un nombre supérieur a 0"))
-            print(cara1)
+
             try:
                 float(cara1)
             except:
-                self.label_erreure_cara2_crea2_animaux.setVisible(True)
+                self.label_erreure_cara1_crea2_animaux.setVisible(True)
+                bon_format = False
             else:
                 self.animal.Profondeur_moyenne = float(cara1)
-                if self.animal.Profondeur_moyenne != cara1:
+                if self.animal.Profondeur_moyenne != float(cara1):
                     self.label_erreure_cara1_crea2_animaux.setVisible(True)
                     bon_format = False
 
             try:
                 float(cara2)
             except:
-                self.label_erreure_cara1_crea2_animaux.setVisible(True)
+                self.label_erreure_cara2_crea2_animaux.setVisible(True)
+                bon_format = False
 
             else:
                 self.animal.Longueur_des_nageoire = float(cara2)
-                if self.animal.Longueur_des_nageoire != cara2:
+                if self.animal.Longueur_des_nageoire != float(cara2):
                     self.label_erreure_cara2_crea2_animaux.setVisible(True)
                     bon_format = False
         elif self.caller.classe == "Oiseau":
@@ -161,12 +185,12 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
             try:
                 float(cara1)
             except:
-                self.label_erreure_cara2_crea2_animaux.setVisible(True)
+                self.label_erreure_cara1_crea2_animaux.setVisible(True)
 
                 bon_format = False
             else:
                 self.animal.Longeur_bec = float(cara1)
-                if self.animal.Longeur_bec != cara1:
+                if self.animal.Longeur_bec != float(cara1):
                     self.label_erreure_cara1_crea2_animaux.setVisible(True)
 
                     bon_format = False
@@ -174,11 +198,11 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
             try:
                 float(cara2)
             except:
-                self.label_erreure_cara1_crea2_animaux.setVisible(True)
+                self.label_erreure_cara2_crea2_animaux.setVisible(True)
                 bon_format = False
             else:
                 self.animal.Longeur_des_ailes = float(cara2)
-                if self.animal.Longeur_des_ailes != cara2:
+                if self.animal.Longeur_des_ailes != float(cara2):
                     self.label_erreure_cara2_crea2_animaux.setVisible(True)
                     bon_format = False
 

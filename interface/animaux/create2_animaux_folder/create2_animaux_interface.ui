@@ -175,7 +175,7 @@
     <string>validez</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label_sup_de_0_erreure_id_crea2_animaux">
+  <widget class="QLabel" name="label_sup_de_0_erreure_poid_crea2_animaux">
    <property name="geometry">
     <rect>
      <x>10</x>
