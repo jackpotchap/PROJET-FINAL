@@ -8,4 +8,4 @@ dict_classe_animaux = {"Reptile" : reptile.Reptile , "Oiseau" : oiseau.Oiseau, "
 
 dict_translate_object_to_dict = {type(reptile.Reptile()): "Reptile",
                                  type(oiseau.Oiseau()): "Oiseau",
-                                 type(poisson.Poisson): "Poisson",}
+                                 type(poisson.Poisson()): "Poisson",}

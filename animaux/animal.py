@@ -10,13 +10,13 @@
 #importation
 from enclos import Enclos
 import json
-import inventaire
+import copy
 
 class Animal:
     """
     classe Animal
     """
-    def __init__(self, p_enclos = Enclos(), p_poid = 0, p_nom = "" , p_espece = "", p_id = ""):
+    def __init__(self, p_enclos = Enclos(), p_poid = 0, p_nom = "" , p_espece = "", p_id = "", p_type = ""):
         """
         Constructeur avec des paramètres par défaults pour la classe animale
         """
@@ -27,13 +27,19 @@ class Animal:
         self.__espece_animal = p_espece
 
         self.__id_animal = p_id
+        self.__type = p_type
+
 
     #j'ai l'intention de faire un affichage dans une liste view donc pour me faciliter la tache je lais mis dans un dictionnaire
+    #Une erreure survenait pusique il semblait changer la valeur dans l'objet et non pas juste du dictionaire
+    #donc grace au code trouver sur https://www.programiz.com/python-programming/shallow-deep-copy#:~:text=In%20Python%2C%20we%20use%20%3D%20operator,reference%20of%20the%20original%20object.
+    #je crée une copie ayant un pointeur différent a mon objet
     def __stre__(self):
-        output = self.__dict__
+        output = copy.copy(self.__dict__)
+
         output["_Animal__enclos_animal"] = self.Enclos_animal.Id_enclos
 
-        return str(output)
+        return output
 
     #code tirée d'exemple vue en classe
     def serialiser(self, p_fichier):
@@ -45,7 +51,7 @@ class Animal:
 
         with open(p_fichier , "w") as fichier:
 
-            output = self.__dict__
+            output = self.__dict__.copy()
 
             output["_Animal__enclos_animal"] = self.__enclos_animal.__dict__
 
@@ -61,10 +67,17 @@ class Animal:
         with open(p_fichier , "r") as fichier :
             self.__dict__ = json.load(fichier)
         for enclos in ls_enlclos:
-            if enclos.Id_enclos == self.__dict__["_Animal__enclos_animal"]:
+            print(enclos.Id_enclos)
+            print(self.__dict__["_Animal__enclos_animal"]['_Enclos__id_enclos'])
+            if enclos.Id_enclos == self.__dict__["_Animal__enclos_animal"]['_Enclos__id_enclos']:
+
                 self.__dict__["_Animal__enclos_animal"] = enclos
 
+    # Propriété pour type
+    def _get_type(self) -> str:
+        return self.__type
 
+    Type = property(fget=_get_type)
     #Propriété pour enclo
     def _get_enclo_animal(self) -> Enclos:
         return self.__enclos_animal
@@ -103,7 +116,10 @@ class Animal:
         return self.__espece_animal
     #Doit être alphabétique
     def _set_espece_animal(self, p_espece: str):
-        if p_espece.isalpha():
+
+        #j'utilise le replace pour enlever les espace puisque il ne sont pas alphabétique
+        #mais que le nom d'une espece peut contenir des espace
+        if p_espece.replace(" ","").isalpha():
             self.__espece_animal = p_espece
 
     Espece = property(_get_espece_animal, _set_espece_animal)
@@ -121,5 +137,4 @@ class Animal:
 
     Id_animal = property(_get_id_animal, _set_id_animal)
 
-o1 = Animal(p_id="A12945", p_nom="boiib",p_poid=19, p_espece="asdsad", p_enclos=Enclos("Plaine", [], "2006-06-06", "E12345"))
-o1.serialiser("test")
+

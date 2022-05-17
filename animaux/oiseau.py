@@ -19,7 +19,7 @@ class Oiseau(animal.Animal):
             Constructeur avec des paramètres par défaults pour la classe oiseau qui hérite d'animale
         """
 
-        animal.Animal.__init__(self, p_enclos, p_poid, p_nom, p_espece, p_id)
+        animal.Animal.__init__(self, p_enclos, p_poid, p_nom, p_espece, p_id, "Oiseau")
 
         self.__longeur_des_ailes = p_longeur_des_ailes
         self.__longeur_bec = p_longeur_bec

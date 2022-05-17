@@ -19,7 +19,7 @@ class Reptile(animal.Animal):
         """
             Constructeur avec des paramètres par défaults pour la classe Reptile qui hérite d'animale
         """
-        animal.Animal.__init__(self, p_enclos, p_poid, p_nom, p_espece, p_id)
+        animal.Animal.__init__(self, p_enclos, p_poid, p_nom, p_espece, p_id, "Reptile")
         self.__couleur_de_peau = p_couleur_de_peau
         self.__temperature = p_temperature
 

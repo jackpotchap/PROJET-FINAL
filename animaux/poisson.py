@@ -18,9 +18,10 @@ class Poisson(animal.Animal):
         """
             Constructeur avec des paramètres par défaults pour la classe poisson qui hérite d'animale
         """
-        animal.Animal.__init__(self, p_enclos, p_poid, p_nom, p_espece, p_id)
+        animal.Animal.__init__(self, p_enclos, p_poid, p_nom, p_espece, p_id, "Poisson")
         self.__longueur_des_nageoire = p_longueur_des_nageoire
         self.__profondeur_moyenne = p_profondeur_moyenne
+
 
     # Propriété pour longueur_des_nageoire
     def _get_longueur_des_nageoire(self) -> float:
