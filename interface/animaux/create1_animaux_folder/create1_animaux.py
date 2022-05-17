@@ -54,8 +54,11 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
         #si l'animal est = a none cela veut dire que l'utilisateur shouaite en crée un
         #alors que si non il veut le modifier
         self.animal = p_animal
+
         if self.animal != None:
-            self.comboBox_classe_crea1_animaux.setCurrentText(self.animal.Espece)
+            print(type(self.animal))
+
+            self.comboBox_classe_crea1_animaux.setCurrentText(inventaire.dict_translate_object_to_dict[type(self.animal)])
             self.lineEdit_id_crea1_animaux.setText(self.animal.Id_animal)
 
     @pyqtSlot()
@@ -75,19 +78,31 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
         for a in inventaire.ls_animaux:
 
             if a.Id_animal == id_animal:
-                trouver = True
+                if a != self.animal:
+                    trouver = True
 
         if trouver:
             self.label_existant_erreure_id_crea1_animaux.setVisible(True)
         else:
             #vérifier si l'id est du bon format en l'attribuant a l'animal
             # Vas grasse a la classe préalablement selectionner crée automatiquement un animal vide
-            self.animal = inventaire.dict_classe_animaux[self.classe]()
+            if inventaire.dict_translate_object_to_dict[type(self.animal)] != self.classe:
+                if self.animal == None:
+
+                    self.animal = inventaire.dict_classe_animaux[self.classe]()
+                else:
+                    animal_t = inventaire.dict_classe_animaux[self.classe]()
+                    animal_t.Nom_animal = self.animal.Nom_animal
+                    animal_t.Poid_animal = self.animal.Poid_animal
+                    animal_t.Espece = self.animal.Espece
+                    self.animal = animal_t
+
             self.animal.Id_animal = id_animal
             if self.animal.Id_animal == "":
                 self.label_format_erreure_id_crea1_enclos.setVisible(True)
             else:
-
+                print(self.animal.Nom_animal)
+                print("AA")
                 crea2_A_form = create2_animaux.Create2Animaux(p_caller = self)
 
 

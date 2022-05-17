@@ -78,8 +78,16 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
         cacher_lables_erreure(self)
 
         self.animal = self.caller.animal
+        print(self.caller.animal.Nom_animal)
+        print("dd")
+
+        print(self.animal.__dict__[list(self.animal.__dict__)[-1]])
         if self.animal != None:
-            pass
+            self.lineEdit_nom_crea2_animaux.setText(self.animal.Nom_animal)
+            self.lineEdit_poid_crea2_animaux.setText(str(self.animal.Poid_animal))
+            self.lineEdit_espece_crea2_animaux.setText(self.animal.Espece)
+            self.lineEdit_cara1_crea2_animaux.setText(str(self.animal.__dict__[list(self.animal.__dict__)[-1]]))
+            self.lineEdit_cara2_crea2_animaux.setText(str(self.animal.__dict__[list(self.animal.__dict__)[-2]]))
 
 
         cara1 = formatage_dun_attribut(list(self.animal.__dict__)[-1], self.caller.classe)
@@ -115,21 +123,21 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
             bon_format = False
         else:
             self.animal.Poid_animal = float(poid)
-            if self.animal.Poid_animal != float(poid):
+            if self.animal.Poid_animal != float(poid) or self.animal.Poid_animal == -1:
 
                 self.label_sup_de_0_erreure_poid_crea2_animaux.setVisible(True)
                 bon_format = False
 
         self.animal.Nom_animal = nom
-        if self.animal.Nom_animal != nom:
+        if self.animal.Nom_animal != nom or self.animal.Nom_animal == "":
             self.label_alpha_only_erreure_nom_crea2_animaux.setVisible(True)
             bon_format = False
 
-        self.animal.Nom_animal = espece
-        if self.animal.Espece != espece:
+        self.animal.Espece = espece
+        if self.animal.Espece != espece or self.animal.Espece == "":
             self.label_alpha_only_erreure_espece_crea2_animaux.setVisible(True)
 
-        self.animal.Enclos_animal =enclos
+        self.animal.Enclos_animal = enclos
 
 
 
@@ -152,7 +160,7 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
                     bon_format = False
 
             self.animal.Couleur_de_peau = cara2
-            if self.animal.Couleur_de_peau != cara2 and cara2 != "":
+            if self.animal.Couleur_de_peau != cara2 or cara2 != "":
                 self.label_erreure_cara2_crea2_animaux.setVisible(True)
                 bon_format = False
         elif self.caller.classe == "Poisson":

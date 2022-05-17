@@ -26,6 +26,13 @@ def refresh_list_view(window, list_animaux):
         item = QStandardItem(a.Id_animal + " - " + a.Nom_animal + " - " + inventaire.dict_translate_object_to_dict[type(a)])
         model.appendRow(item)
 
+def cacher_lables_erreure(window):
+    """
+    Fonction pour cacher les labels erreure du parametre window
+    : window: la fenettre a chacher les labels erreure de...
+    """
+    window.label_selection_erreure_gestion_animaux.setVisible(False)
+    window.label_format_erreure_id_recherche_gestion_animaux.setVisible(False)
 
 class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
     """
@@ -40,7 +47,7 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
 
         super(GestionAnimaux, self).__init__(parent)
         self.setupUi(self)
-
+        cacher_lables_erreure(self)
         self.lineEdit_recherche_id_gestion_animaux.installEventFilter(self)
         self.setWindowTitle("Gestion de Zoo - Gestion animaux")
         refresh_list_view(self, inventaire.ls_animaux)
@@ -58,6 +65,7 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
                 fonction pour ouvrire la fenêtre de création d'animaux
         """
 
+
         crea1_A_form = create1_animaux.Create1Animaux()
 
         crea1_A_form.show()
@@ -70,11 +78,15 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
         """
                 fonction pour ouvrire la fenêtre de modification d'animaux
         """
+        cacher_lables_erreure(self)
+        if self.listView_recherche_gestion_animaux.currentIndex().row() == -1:
+            self.label_selection_erreure_gestion_animaux.setVisible(True)
 
-        crea1_A_form = create1_animaux.Create1Animaux()
+        else:
+            crea1_A_form = create1_animaux.Create1Animaux(p_animal=inventaire.ls_animaux[self.listView_recherche_gestion_animaux.currentIndex().row()])
 
-        crea1_A_form.show()
-        crea1_A_form.exec()
+            crea1_A_form.show()
+            crea1_A_form.exec()
 
 
     @pyqtSlot()
