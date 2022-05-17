@@ -10,6 +10,7 @@
 #importation
 from enclos import Enclos
 import json
+import inventaire
 
 class Animal:
     """
@@ -45,7 +46,8 @@ class Animal:
         with open(p_fichier , "w") as fichier:
 
             output = self.__dict__
-            print(output)
+
+            output["_Animal__enclos_animal"] = self.__enclos_animal.__dict__
 
             json.dump(output, fichier)
 
@@ -119,4 +121,5 @@ class Animal:
 
     Id_animal = property(_get_id_animal, _set_id_animal)
 
-
+o1 = Animal(p_id="A12945", p_nom="boiib",p_poid=19, p_espece="asdsad", p_enclos=Enclos("Plaine", [], "2006-06-06", "E12345"))
+o1.serialiser("test")

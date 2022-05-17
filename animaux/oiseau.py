@@ -45,3 +45,5 @@ class Oiseau(animal.Animal):
             self.__longeur_bec = p_longeur_bec
 
     Longeur_bec = property(_get_longeur_bec, _set_longeur_bec)
+
+
