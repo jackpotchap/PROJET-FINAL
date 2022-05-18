@@ -58,21 +58,25 @@ class Animal:
             json.dump(output, fichier)
 
 
-    def deserialiser(self, p_fichier, ls_enlclos):
+    def deserialiser(self, p_fichier, ls_enlclos, p_enclos_id = ""):
         """
            Méthode pour désérialiser un object de la classe Animal.
            ::param p_fichier : Le nom du fichier de l'Animal.
         """
 
-        with open(p_fichier , "r") as fichier :
-            self.__dict__ = json.load(fichier)
+
         for enclos in ls_enlclos:
-            print(enclos.Id_enclos)
-            print(self.__dict__["_Animal__enclos_animal"]['_Enclos__id_enclos'])
-            if enclos.Id_enclos == self.__dict__["_Animal__enclos_animal"]['_Enclos__id_enclos']:
-
-                self.__dict__["_Animal__enclos_animal"] = enclos
-
+            #pour éviter les infinites loop l'enclos de l'animal contenue dans la list animal enclos represente seulement la variable et non
+            #l'enclos si l'id de l'enclos est fournis ses qu'on souhait désirialiser toutes les animaux de cette enclos
+            if p_enclos_id == "":
+                with open(p_fichier, "r") as fichier:
+                    self.__dict__ = json.load(fichier)
+                if enclos.Id_enclos == self.__dict__["_Animal__enclos_animal"]['_Enclos__id_enclos']:
+                    self.__dict__["_Animal__enclos_animal"] = enclos
+            else:
+                if enclos.Id_enclos ==p_enclos_id:
+                    self.__dict__ = p_fichier
+                    self.__dict__["_Animal__enclos_animal"] = enclos
     # Propriété pour type
     def _get_type(self) -> str:
         return self.__type

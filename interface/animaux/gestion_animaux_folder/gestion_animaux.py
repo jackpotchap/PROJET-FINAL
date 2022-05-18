@@ -142,7 +142,12 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
         if self.listView_recherche_gestion_animaux.currentIndex().row() == -1:
             self.label_selection_erreure_gestion_animaux.setVisible(True)
         else:
-            inventaire.ls_animaux.remove(inventaire.ls_animaux[self.listView_recherche_gestion_animaux.currentIndex().row()])
+            animal_t = inventaire.ls_animaux[self.listView_recherche_gestion_animaux.currentIndex().row()]
+            for e in inventaire.ls_enclos:
+                if e.Id_enclos == animal_t.Enclos_animal.Id_enclos:
+                    e.Ls_animaux_enclos.remove(animal_t)
+
+            inventaire.ls_animaux.remove(animal_t)
             refresh_list_view(self, filtre(self, ""))
 
 

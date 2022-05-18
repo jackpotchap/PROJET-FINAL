@@ -26,7 +26,9 @@ def cacher_lables_erreure(window):
 def refresh_list_view(window, ls_animaux):
     model = QStandardItemModel()
     window.listView_ls_animal_detail_enclos.setModel(model)
+    print(ls_animaux)
     for a in ls_animaux:
+
         item = QStandardItem(
             a.Id_animal + " - " + a.Nom_animal + " - " + inventaire.dict_translate_object_to_dict[type(a)])
         model.appendRow(item)
@@ -45,7 +47,8 @@ class DetailEnclos(QtWidgets.QDialog, detail_enclos_interface.Ui_Dialog):
         cacher_lables_erreure(self)
 
 
-        ls_animaux = self.enclos.Ls_animaux_enclos
+        ls_animaux = self.enclos.Ls_animaux_enclos.copy()
+        print(ls_animaux)
         refresh_list_view(self,ls_animaux)
 
         self.label_id_information_detail_enclo.setText(self.enclos.Id_enclos)

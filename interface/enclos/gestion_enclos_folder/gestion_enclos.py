@@ -6,17 +6,20 @@
 ###  No Groupe: 00001
 ###  Description du fichier: Classe GestionEnclos
 ###################################################################################
+import pathlib
 from datetime import date
 
 from PyQt5 import QtWidgets
 from PyQt5.QtCore import pyqtSlot, QEvent
 from PyQt5.QtGui import QStandardItemModel, QStandardItem
 
+import enclos
 from interface.enclos.gestion_enclos_folder import gestion_enclos_interface
 from interface.enclos.create_enclos_folder import create_enclos
 from interface.enclos.detail_enclos_folder import detail_enclos
 from interface.enclos.deserialisation_enclos_folder import deserialisation_enclos
 import inventaire
+from interface.succes_pop_up_interface_folder import succes_pop_up
 
 
 def refresh_list_view(window, list_enclos):
@@ -139,6 +142,8 @@ class GestionEnclos(QtWidgets.QDialog, gestion_enclos_interface.Ui_Dialog):
         if self.listView_recherche_gestion_enclos.currentIndex().row() == -1:
             self.label_selection_erreure_gestion_enclos.setVisible(True)
         else:
+            for a in inventaire.ls_enclos[self.listView_recherche_gestion_enclos.currentIndex().row()].Ls_animaux_enclos:
+                a.Enclos_animal = enclos.Enclos()
             inventaire.ls_enclos.remove(
                 inventaire.ls_enclos[self.listView_recherche_gestion_enclos.currentIndex().row()])
             refresh_list_view(self, filtre(self, ""))
@@ -172,16 +177,41 @@ class GestionEnclos(QtWidgets.QDialog, gestion_enclos_interface.Ui_Dialog):
             detail_E_form.exec()
 
     @pyqtSlot()
+    def on_pushButton_serialiser_gestion_enclo_clicked(self):
+        """
+                fonction pour sérialiser un enclos
+        """
+        if self.listView_recherche_gestion_enclos.currentIndex().row() == -1:
+            self.label_selection_erreure_gestion_enclos.setVisible(True)
+        else:
+            resulta = 0
+            try:
+                enclos_t = inventaire.ls_enclos[self.listView_recherche_gestion_enclos.currentIndex().row()]
+                nom_du_fichier = enclos_t.Id_enclos + "_" + enclos_t.Ecosysteme_enclos + "_" + enclos_t.Dernier_netoyage_enclos
+                path = str(pathlib.Path().resolve()) + "\\Serialiser\\" + nom_du_fichier
+                # code trouver sur https://stackoverflow.com/questions/3430372/how-do-i-get-the-full-path-of-the-current-files-directory
+                # pour avoir seulement le directory dans le quelle on travail
+                enclos_t.serialiser(path)
+            except:
+                resulta = 1
+
+            Sucess_A_form = succes_pop_up.SuccesPopUpInterface(resulta)
+            Sucess_A_form.show()
+            Sucess_A_form.exec()
+            refresh_list_view(self, filtre(self, ""))
+
+    @pyqtSlot()
     def on_pushButton_deserialiser_gestion_enclo_clicked(self):
         """
                 fonction pour ouvrire la fenêtre de detail d'enclos
         """
-        print(1)
+
         Deser_E_form = deserialisation_enclos.DeserialisationEnclos()
 
         Deser_E_form.show()
         Deser_E_form.exec()
 
+        refresh_list_view(self, filtre(self, ""))
     @pyqtSlot()
     def on_pushButton_menu_principale_gestion_enclos_clicked(self):
         """

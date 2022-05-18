@@ -55,7 +55,7 @@ class Enclos:
             json.dump(output, fichier)
 
 
-    def deserialiser(self, p_fichier,ls_animaux):
+    def deserialiser(self, p_fichier,ls_animaux, importer_animaux):
         """
            Méthode pour désérialiser un object de la classe enclos.
            ::param p_fichier : Le nom du fichier de l'enclos.
@@ -63,13 +63,10 @@ class Enclos:
         trouver = False
         with open(p_fichier, "r") as fichier:
             self.__dict__ = json.load(fichier)
-            for animal in ls_animaux:
-                if animal.Id_animal == self.__dict__["_Animal__enclos_animal"]:
-                    self.__dict__["_Animal__enclos_animal"] = self
-                    trouver = True
-
-            if not trouver:
-                return self.Ls_animaux_enclos
+            if importer_animaux:
+                pass
+            else:
+                self.__dict__["Ls_animaux_enclos"] = []
 
     # Propriété pour id
     def _get_id_enclos(self) -> str:
