@@ -80,7 +80,7 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
         self.setWindowTitle("Gestion de Zoo - Gestion animaux")
         refresh_list_view(self, inventaire.ls_animaux)
         self.caller = p_caller
-
+        print(self.listView_recherche_gestion_animaux.currentIndex().row())
         classe = list(inventaire.dict_classe_animaux)
         classe.append("None")
         for c in classe:
@@ -112,7 +112,7 @@ class GestionAnimaux(QtWidgets.QDialog, gestion_animaux_interface.Ui_Dialog):
                 fonction pour ouvrire la fenêtre de création d'animaux
         """
 
-
+        cacher_lables_erreure(self)
         crea1_A_form = create1_animaux.Create1Animaux()
 
         crea1_A_form.show()

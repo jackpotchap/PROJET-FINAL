@@ -15,9 +15,7 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(831, 576)
-        self.listView_recherche_gestion_enclos = QtWidgets.QListView(Dialog)
-        self.listView_recherche_gestion_enclos.setGeometry(QtCore.QRect(20, 250, 401, 291))
-        self.listView_recherche_gestion_enclos.setObjectName("listView_recherche_gestion_enclos")
+
         self.lineEdit_recherche_id_gestion_enclos = QtWidgets.QLineEdit(Dialog)
         self.lineEdit_recherche_id_gestion_enclos.setGeometry(QtCore.QRect(20, 80, 151, 31))
         self.lineEdit_recherche_id_gestion_enclos.setObjectName("lineEdit_recherche_id_gestion_enclos")
@@ -42,6 +40,9 @@ class Ui_Dialog(object):
         font.setPointSize(14)
         self.label_recherche_ecosysteme_gestion_enclo.setFont(font)
         self.label_recherche_ecosysteme_gestion_enclo.setObjectName("label_recherche_ecosysteme_gestion_enclo")
+        self.listView_recherche_gestion_enclos = QtWidgets.QListView(Dialog)
+        self.listView_recherche_gestion_enclos.setGeometry(QtCore.QRect(20, 250, 401, 291))
+        self.listView_recherche_gestion_enclos.setObjectName("listView_recherche_gestion_enclos")
         self.comboBox_recherche_ecosysteme_gestion_enclos = QtWidgets.QComboBox(Dialog)
         self.comboBox_recherche_ecosysteme_gestion_enclos.setGeometry(QtCore.QRect(20, 200, 181, 31))
         self.comboBox_recherche_ecosysteme_gestion_enclos.setObjectName("comboBox_recherche_ecosysteme_gestion_enclos")

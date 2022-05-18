@@ -239,6 +239,15 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
                 if a.Id_animal == self.animal.Id_animal:
                     inventaire.ls_animaux.remove(a)
 
+            #pour éviter que le meme animaux se retrouve dans le meme enclos
+            if self.caller.enclos != None:
+                for a in self.caller.enclos.Ls_animaux_enclos:
+                    if a.Id_animal == self.animal.Id_animal:
+                        self.caller.enclos.Ls_animaux_enclos.remove(a)
+
+            self.animal.Enclos_animal.Ls_animaux_enclos.append(self.animal)
+
+
             inventaire.ls_animaux.append(self.animal)
 
             self.bruteForceClose = True

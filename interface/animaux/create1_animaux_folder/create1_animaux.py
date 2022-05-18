@@ -59,9 +59,9 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
         #si l'animal est = a none cela veut dire que l'utilisateur shouaite en crée un
         #alors que si non il veut le modifier
         self.animal = p_animal
-
+        self.enclos = None
         if self.animal != None:
-
+            self.enclos = self.animal.Enclos_animal
             self.adminId = self.animal.Id_animal
             self.comboBox_classe_crea1_animaux.setCurrentText(inventaire.dict_translate_object_to_dict[type(self.animal)])
             self.lineEdit_id_crea1_animaux.setText(self.animal.Id_animal)
@@ -80,7 +80,7 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
         id_animal = self.lineEdit_id_crea1_animaux.text()
         self.classe = self.comboBox_classe_crea1_animaux.currentText()
         trouver = False
-        print(inventaire.ls_animaux)
+
         for a in inventaire.ls_animaux:
 
             if a.Id_animal == id_animal:
@@ -96,7 +96,7 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
             if self.animal == None:
                 self.animal = inventaire.dict_classe_animaux[self.classe]()
             elif inventaire.dict_translate_object_to_dict[type(self.animal)] != self.classe:
-                print(self.classe, type(self.animal))
+
                 animal_t = inventaire.dict_classe_animaux[self.classe]()
                 animal_t.Nom_animal = self.animal.Nom_animal
                 animal_t.Poid_animal = self.animal.Poid_animal
