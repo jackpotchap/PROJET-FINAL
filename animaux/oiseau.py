@@ -41,8 +41,10 @@ class Oiseau(animal.Animal):
 
     # Doit être supérieur à 0
     def _set_longeur_bec(self, p_longeur_bec: float):
+
         if p_longeur_bec > 0:
             self.__longeur_bec = p_longeur_bec
+
 
     Longeur_bec = property(_get_longeur_bec, _set_longeur_bec)
 

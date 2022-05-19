@@ -150,11 +150,12 @@ class DeserialisationEnclos(QtWidgets.QDialog, deserialisation_enclos_interface.
                 if self.importer_animaux:
                     ls_animaux_enclos_t = []
                     for a in enclos_t.Ls_animaux_enclos:
-                        print(a["_Animal__type"])
-                        print(inventaire.dict_classe_animaux[a["_Animal__type"]])
-
-                        animal_t = inventaire.dict_classe_animaux[a["_Animal__type"]]()
-                        animal_t.deserialiser(a, inventaire.ls_enclos, enclos_t.Id_enclos)
+                        #si jamais l'animal existe déjà
+                        if type(a) == type({}):
+                            animal_t = inventaire.dict_classe_animaux[a["_Animal__type"]]()
+                            animal_t.deserialiser(a, inventaire.ls_enclos, enclos_t.Id_enclos)
+                        else:
+                            animal_t = a
 
                         #faire sure que un animal étant déjà dans le systeme sois importer 2 fois
                         trouver = False

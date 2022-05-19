@@ -183,7 +183,7 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
                 bon_format = False
             else:
                 self.animal.Temperature = float(cara1)
-                if self.animal.Temperature != float(cara1):
+                if self.animal.Temperature != float(cara1) or self.animal.Temperature == -1:
                     self.label_erreure_cara1_crea2_animaux.setVisible(True)
                     bon_format = False
 
@@ -202,7 +202,7 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
                 bon_format = False
             else:
                 self.animal.Profondeur_moyenne = float(cara1)
-                if self.animal.Profondeur_moyenne != float(cara1):
+                if self.animal.Profondeur_moyenne != float(cara1) or self.animal.Profondeur_moyenne == -1:
                     self.label_erreure_cara1_crea2_animaux.setVisible(True)
                     bon_format = False
 
@@ -214,7 +214,7 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
 
             else:
                 self.animal.Longueur_des_nageoire = float(cara2)
-                if self.animal.Longueur_des_nageoire != float(cara2):
+                if self.animal.Longueur_des_nageoire != float(cara2) or self.animal.Longueur_des_nageoire == -1:
                     self.label_erreure_cara2_crea2_animaux.setVisible(True)
                     bon_format = False
         elif self.caller.classe == "Oiseau":
@@ -229,7 +229,9 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
                 bon_format = False
             else:
                 self.animal.Longeur_bec = float(cara1)
-                if self.animal.Longeur_bec != float(cara1):
+                print(float(cara1))
+                print(self.animal.Longeur_bec)
+                if self.animal.Longeur_bec != float(cara1) or self.animal.Longeur_bec == -1:
                     self.label_erreure_cara1_crea2_animaux.setVisible(True)
 
                     bon_format = False
@@ -241,7 +243,7 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
                 bon_format = False
             else:
                 self.animal.Longeur_des_ailes = float(cara2)
-                if self.animal.Longeur_des_ailes != float(cara2):
+                if self.animal.Longeur_des_ailes != float(cara2) or self.animal.Longeur_bec == -1:
                     self.label_erreure_cara2_crea2_animaux.setVisible(True)
                     bon_format = False
 

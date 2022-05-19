@@ -87,7 +87,7 @@ class Animal:
                 if enclos.Id_enclos ==p_enclos_id:
                     self.__dict__ = p_fichier
                     self.__dict__["_Animal__enclos_animal"] = enclos
-                    enclos.Ls_animaux_enclos.append(self)
+
 
 
 
