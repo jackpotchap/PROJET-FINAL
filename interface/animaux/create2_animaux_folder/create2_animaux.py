@@ -64,34 +64,41 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
         super(Create2Animaux, self).__init__(parent)
         self.setupUi(self)
         self.caller = p_caller
+
+        # pour eviter le "êtte vous sure de vouloir quitter"?
         self.bruteForceClose = False
 
         self.setWindowTitle("Gestion de Zoo - 2e étape de la création d'un animaux")
 
         # mettre toute les enclos disponible dans la combo box
         for e in inventaire.ls_enclos:
-            print(e.Ecosysteme_enclos)
+
             self.comboBox_enclos_crea2_enclos.addItem(f"{e.Id_enclos} - {e.Ecosysteme_enclos}")
+
 
         self.setWindowModality(Qt.ApplicationModal)
 
         cacher_lables_erreure(self)
 
+
         self.animal = self.caller.animal
-        print(self.caller.animal.Nom_animal)
 
 
-        print(self.animal.__dict__[list(self.animal.__dict__)[-1]])
+
+        #Pour afficher les propritété ayant déja été initialiser
         if self.animal != None:
             self.lineEdit_nom_crea2_animaux.setText(self.animal.Nom_animal)
             if self.animal.Poid_animal == -1:
                 self.lineEdit_poid_crea2_animaux.setText("")
             else:
                 self.lineEdit_poid_crea2_animaux.setText(str(self.animal.Poid_animal))
+            #pour que la enlcos prédéfinis sois déjà selectionné
 
+            for e in inventaire.ls_enclos:
+                if e.Id_enclos == self.animal.Enclos_animal.Id_enclos:
+                    self.comboBox_enclos_crea2_enclos.setCurrentIndex(inventaire.ls_enclos.index(e))
 
             self.lineEdit_espece_crea2_animaux.setText(self.animal.Espece)
-            print(str(self.animal.__dict__[list(self.animal.__dict__)[-1]]), "allo")
             if str(self.animal.__dict__[list(self.animal.__dict__)[-1]]) == "-1":
                 self.lineEdit_cara1_crea2_animaux.setText("")
             else:
@@ -103,7 +110,7 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
                 self.lineEdit_cara2_crea2_animaux.setText(str(self.animal.__dict__[list(self.animal.__dict__)[-2]]))
 
 
-
+        #permeteras afficher l'attribut peut import sa classe
         cara1 = formatage_dun_attribut(list(self.animal.__dict__)[-1], self.caller.classe)
         self.label_cara1_crea2_animaux.setText(cara1)
 
@@ -115,7 +122,7 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
 
 
 
-        #pour eviter que lorsque l<utilisateur veut revenir en arrirer il recoit le message avertissement
+        #pour eviter que lorsque l'utilisateur veut revenir en arrirèr il recoit le message avertissement.
         self.bruteForceClose = True
 
         self.close()
@@ -130,6 +137,10 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
         nom = self.lineEdit_nom_crea2_animaux.text()
         enclos = inventaire.ls_enclos[self.comboBox_enclos_crea2_enclos.currentIndex()]
         espece = self.lineEdit_espece_crea2_animaux.text()
+
+        #Vérification des données
+
+        #Vérification de poids
         try:
             float(poid)
         except:
@@ -142,24 +153,26 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
                 self.label_sup_de_0_erreure_poid_crea2_animaux.setVisible(True)
                 bon_format = False
 
+        #vérification pour le nom
         self.animal.Nom_animal = nom
         if self.animal.Nom_animal != nom or self.animal.Nom_animal == "":
             self.label_alpha_only_erreure_nom_crea2_animaux.setVisible(True)
             bon_format = False
 
+
+        #vérification pour le nom de l'èspece
         self.animal.Espece = espece
-        print(espece, ": espoece")
         if self.animal.Espece != espece or self.animal.Espece == "":
             self.label_alpha_only_erreure_espece_crea2_animaux.setVisible(True)
             bon_format = False
+
         self.animal.Enclos_animal = enclos
-
-
 
 
         cara1 = self.lineEdit_cara1_crea2_animaux.text()
         cara2 = self.lineEdit_cara2_crea2_animaux.text()
 
+        #vérifiecation des 2 caratere spéciphique pour chaque type
         if self.caller.classe == "Reptile":
             self.label_erreure_cara2_crea2_animaux.setText(colorier_en_rouge("*Doit uniquement contenir des lettres"))
             self.label_erreure_cara1_crea2_animaux.setText(colorier_en_rouge("*Doit être un nombre supérieur a 0"))
@@ -207,7 +220,7 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
         elif self.caller.classe == "Oiseau":
             self.label_erreure_cara2_crea2_animaux.setText(colorier_en_rouge("*Doit être un nombre supérieur a 0"))
             self.label_erreure_cara1_crea2_animaux.setText(colorier_en_rouge("*Doit être un nombre supérieur a 0"))
-            print(cara1)
+
             try:
                 float(cara1)
             except:
@@ -233,10 +246,11 @@ class Create2Animaux(QtWidgets.QDialog, create2_animaux_interface.Ui_Dialog):
                     bon_format = False
 
         if bon_format:
-            # pour eviter que lorsque l<utilisateur veut revenir en arrirer il recoit le message avertissement
 
+            #si jamais l'animal a changer de type, pour éviter que deux animaux avec le meme id existe en même temps
+            #on vas suprimée
             for a in inventaire.ls_animaux:
-                if a.Id_animal == self.animal.Id_animal:
+                if a.Id_animal == self.animal.Id_animal or a.Id_animal == self.caller.adminId:
                     inventaire.ls_animaux.remove(a)
 
             #pour éviter que le meme animaux se retrouve dans le meme enclos

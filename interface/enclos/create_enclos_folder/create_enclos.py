@@ -38,6 +38,7 @@ class CreateEnclos(QtWidgets.QDialog, create_enclos_interface.Ui_Dialog):
         cacher_lables_erreure(self)
 
         self.setWindowTitle("Gestion de Zoo - Create enclos")
+        #variable qui si mis a true, permet de quitter sans demande a l'utilisateur si il veut quitter
         self.bruteForceClose = False
         environement = list(inventaire.ls_type_enclos)
 
@@ -55,23 +56,38 @@ class CreateEnclos(QtWidgets.QDialog, create_enclos_interface.Ui_Dialog):
         if self.enclos != None:
 
             self.adminId = self.enclos.Id_enclos
+
             self.comboBox_ecosysteme_crea_enclos.setCurrentText(self.enclos.Ecosysteme_enclos)
             self.lineEdit_id_crea_enclo.setText(self.enclos.Id_enclos)
     @pyqtSlot()
     def on_pushButton_annulez_crea_enclos_clicked(self):
+        """
+        Fonction pour fermer la fenêtre
+        """
         self.close()
 
     @pyqtSlot()
     def on_pushButton_valider_crea_enclos_clicked(self):
-
+        """
+            fonction qui vas aller collecter les information aux endroit appropriée
+            pour ensuite valider ses information et crée un nouvelle enclos
+            cette function est également utiliser pour crée de nouvelle enclos.
+        """
         id_enclos = self.lineEdit_id_crea_enclo.text()
         environnement = self.comboBox_ecosysteme_crea_enclos.currentText()
         trouver = False
         bon_format = True
+
+        #Je fais une liste de protocole pour vérifier si je peut oui ou non utiliser l'enclos
         for e in inventaire.ls_enclos:
 
+            #si un autre enclos la possede déja
             if e.Id_enclos == id_enclos:
+
+                #si cette enclos m'est pas lui-meme
                 if e != self.enclos:
+
+                    #si ce ne fut pas déja cette enclos
                     if self.adminId != e.Id_enclos:
                         trouver = True
 
@@ -79,8 +95,8 @@ class CreateEnclos(QtWidgets.QDialog, create_enclos_interface.Ui_Dialog):
         if trouver:
             self.label_existant_erreure_id_crea_enclos.setVisible(True)
         else:
-            # vérifier si l'id est du bon format en l'attribuant a l'animal
-            # Vas grasse a la classe préalablement selectionner crée automatiquement un animal vide
+            # vérifier si l'id est du bon format en l'attribuant a un enclos
+
             if self.enclos == None:
                 #code trouver sur
                 #https://www.geeksforgeeks.org/python-program-to-print-current-year-month-and-day/#:~:text=In%20Python%2C%20in%20order%20to,class%20to%20fetch%20todays%20date.
@@ -99,7 +115,7 @@ class CreateEnclos(QtWidgets.QDialog, create_enclos_interface.Ui_Dialog):
             self.enclos.Ecosysteme_enclos = environnement
 
             if bon_format:
-                #pour modifier les caratere de l'animal si jamais il exist e déja
+                #Pour modifier les caratère de l'animal si jamais il existe déja.
                 for e in inventaire.ls_enclos:
                     if e.Id_enclos == self.enclos.Id_enclos  :
                         inventaire.ls_enclos.remove(e)

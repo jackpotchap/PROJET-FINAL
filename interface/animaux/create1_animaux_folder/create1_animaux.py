@@ -13,7 +13,7 @@ from PyQt5.QtCore import pyqtSlot
 import inventaire
 from interface.animaux.create1_animaux_folder import create1_animaux_interface
 from interface.animaux.create2_animaux_folder import create2_animaux
-from interface.animaux.quitter_sans_terminer_animaux_crea_folder import quitter_sans_terminer_animaux_crea
+
 from animaux import animal
 from animaux import reptile, poisson, oiseau, animal
 
@@ -48,18 +48,20 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
         for classe in inventaire.dict_classe_animaux:
             self.comboBox_classe_crea1_animaux.addItem(classe)
 
-        #pour eviter le ette vous sure de vouloir quitter
+        #pour eviter le "êtte vous sure de vouloir quitter"?
         self.bruteForceClose = False
 
         #pour eviter le probème ou on change la classe et
-        # donc l'animal n'est plus le meme object et donc sont id est déjà occupé par lui meme
+        # donc l'animal n'est plus le même objet et donc sont id est déjà occupé par lui meme
 
         self.adminId = None
 
-        #si l'animal est = a none cela veut dire que l'utilisateur shouaite en crée un
+        #si l'animal est = None cela veut dire que l'utilisateur souhaite en crée un
         #alors que si non il veut le modifier
         self.animal = p_animal
         self.enclos = None
+
+        #pour mettre les valeurs de l'animal si on es tdans un cas de modification
         if self.animal != None:
             self.enclos = self.animal.Enclos_animal
             self.adminId = self.animal.Id_animal
@@ -70,9 +72,9 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
     def on_pushButton_suivant_crea1_animaux_clicked(self):
         """
                 fonction pour ouvrire la 2e fenêtre de création d'animaux
-                et également commencer la création de l'animal et les premiere vérification
+                et également commencer la création de l'animal et les premières vérification
         """
-        #pour que les erreure ayant été corriger disparaisse apres chaque essaie
+        #pour que les erreure ayant été corriger disparaisse après chaque essaie
         cacher_lables_erreure(self)
 
 
@@ -81,10 +83,16 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
         self.classe = self.comboBox_classe_crea1_animaux.currentText()
         trouver = False
 
+        # Je fais une liste de protocole pour vérifier si je peut oui ou non utiliser l'animal
         for a in inventaire.ls_animaux:
 
+            # si un autre animal la possede déja
             if a.Id_animal == id_animal:
+
+                # si cette animal m'est pas lui-meme
                 if a != self.animal:
+
+                    # si ce ne fut pas déja cette animal
                     if self.adminId != a.Id_animal:
                         trouver = True
 
@@ -96,7 +104,7 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
             if self.animal == None:
                 self.animal = inventaire.dict_classe_animaux[self.classe]()
             elif inventaire.dict_translate_object_to_dict[type(self.animal)] != self.classe:
-
+                #dans le cas ou le type a été changer mes pas l'id
                 animal_t = inventaire.dict_classe_animaux[self.classe]()
                 animal_t.Nom_animal = self.animal.Nom_animal
                 animal_t.Poid_animal = self.animal.Poid_animal
@@ -109,7 +117,7 @@ class Create1Animaux(QtWidgets.QDialog, create1_animaux_interface.Ui_Dialog):
             if self.animal.Id_animal == "":
                 self.label_format_erreure_id_crea1_enclos.setVisible(True)
             else:
-
+                #une référence est fournis a Create2Animaux pour avoir acces â ses attribut.
                 crea2_A_form = create2_animaux.Create2Animaux(p_caller = self)
 
 

@@ -30,10 +30,13 @@ class Animal:
         self.__type = p_type
 
 
-    #j'ai l'intention de faire un affichage dans une liste view donc pour me faciliter la tache je lais mis dans un dictionnaire
-    #Une erreure survenait pusique il semblait changer la valeur dans l'objet et non pas juste du dictionaire
-    #donc grace au code trouver sur https://www.programiz.com/python-programming/shallow-deep-copy#:~:text=In%20Python%2C%20we%20use%20%3D%20operator,reference%20of%20the%20original%20object.
-    #je crée une copie ayant un pointeur différent a mon objet
+    #j'ai l'intention de faire un affichage dans une liste view donc pour me faciliter la tache je lais mis dans un dictionnaire.
+    #Une erreure survenait puisqu'il semblait changer la valeur dans l'objet et non pas juste du dictionaire.
+    #donc grâce au code trouvé sur https://www.programiz.com/python-programming/shallow-deep-copy#:~:text=In%20Python%2C%20we%20use%20%3D%20operator,reference%20of%20the%20original%20object.
+    #Je crée une copie ayant un pointeur différent à mon objet.
+
+    #la fonction s'appele stre pour ne pas etre confondue avec la vraie fonction str
+    #qui n'est pas définie puisque elle est inutile dans mon programe puisque je n'utilise que des list view pour afficher mon information
     def __stre__(self):
         output = copy.copy(self.__dict__)
 
@@ -53,9 +56,13 @@ class Animal:
 
             output = self.__dict__.copy()
 
+            #comme enclos est un object il ne peut pas simplement etre dump dans le json donc je dois a son tour le transformer en dict
+            #et pour éviter un infinite loop je dois lui passer une list aniamux vide
             output["_Animal__enclos_animal"] = self.__enclos_animal.__dict__
-
+            output["_Animal__enclos_animal"]['Ls_animaux_enclos'] = []
             json.dump(output, fichier)
+
+
 
 
     def deserialiser(self, p_fichier, ls_enlclos, p_enclos_id = ""):
@@ -66,22 +73,31 @@ class Animal:
 
 
         for enclos in ls_enlclos:
-            #pour éviter les infinites loop l'enclos de l'animal contenue dans la list animal enclos represente seulement la variable et non
+            #Pour éviter les infinites loop l'enclos de l'animal contenue dans la list animal enclos represente seulement la variable et non
             #l'enclos si l'id de l'enclos est fournis ses qu'on souhait désirialiser toutes les animaux de cette enclos
             if p_enclos_id == "":
                 with open(p_fichier, "r") as fichier:
                     self.__dict__ = json.load(fichier)
                 if enclos.Id_enclos == self.__dict__["_Animal__enclos_animal"]['_Enclos__id_enclos']:
+
                     self.__dict__["_Animal__enclos_animal"] = enclos
+                    enclos.Ls_animaux_enclos.append(self)
+                    break
             else:
                 if enclos.Id_enclos ==p_enclos_id:
                     self.__dict__ = p_fichier
                     self.__dict__["_Animal__enclos_animal"] = enclos
+                    enclos.Ls_animaux_enclos.append(self)
+
+
+
     # Propriété pour type
     def _get_type(self) -> str:
         return self.__type
 
+    #type qui est en lecture seulement
     Type = property(fget=_get_type)
+
     #Propriété pour enclo
     def _get_enclo_animal(self) -> Enclos:
         return self.__enclos_animal
@@ -97,7 +113,7 @@ class Animal:
         return self.__poid_animal
     #Doit être supérieur à 0
     def _set_poid_animal(self, p_poid_animal: float):
-        print(p_poid_animal > 0)
+
         if p_poid_animal > 0:
             self.__poid_animal = p_poid_animal
 
@@ -118,11 +134,12 @@ class Animal:
     #Propriété pour espèce
     def _get_espece_animal(self) -> str:
         return self.__espece_animal
+
     #Doit être alphabétique
     def _set_espece_animal(self, p_espece: str):
 
         #j'utilise le replace pour enlever les espace puisque il ne sont pas alphabétique
-        #mais que le nom d'une espece peut contenir des espace
+        #mais que le nom d'une espece peut contenir des espaces.
         if p_espece.replace(" ","").isalpha():
             self.__espece_animal = p_espece
 

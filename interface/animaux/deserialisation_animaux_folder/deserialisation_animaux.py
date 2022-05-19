@@ -31,6 +31,9 @@ def cacher_lables_erreure(window):
         colorier_en_rouge("*Une erreure ces produit durant l\'importation"))
     window.label_importation_erreure_deserialisation_animaux.setVisible(False)
     window.label_selection_erreure_deserialisation_animaux.setVisible(False)
+
+# code trouver sur https://stackoverflow.com/questions/38746002/pyqt-qfiledialog-directly-browse-to-a-folder
+# pour montrer un interafce pouvant aller recuperer des fichier
 def FileDialog(directory='', forOpen=True, fmt='', isFolder=False):
     options = QFileDialog.Options()
     options |= QFileDialog.DontUseNativeDialog
@@ -89,6 +92,8 @@ class DeserialisationAnimaux(QtWidgets.QDialog, deserialisation_animaux_interfac
         #pour montrer un interafce pouvant aller recuperer des fichier
         self.Filepath = FileDialog(forOpen=True)
         cacher_lables_erreure(self)
+
+        #tester si le fichier es t lissable et l'afficher dans un textbrower son contenue
         try:
             with open(self.Filepath, "r") as fichier:
                 self.dict = json.load(fichier)
@@ -100,7 +105,7 @@ class DeserialisationAnimaux(QtWidgets.QDialog, deserialisation_animaux_interfac
     def on_pushButton_ajouter_deserialisation_animaux_clicked(self):
         cacher_lables_erreure(self)
 
-        #pour faire sure que le fichier a deja été ouvert
+        #pour faire sure que le fichier a déjà été ouvert
         if self.dict != "":
 
             animal_t = inventaire.dict_classe_animaux[self.dict["_Animal__type"]]()
@@ -116,6 +121,7 @@ class DeserialisationAnimaux(QtWidgets.QDialog, deserialisation_animaux_interfac
                 self.label_importation_erreure_deserialisation_animaux.setVisible(True)
                 self.label_importation_erreure_deserialisation_animaux.setText(colorier_en_rouge("*un animal ayant un id identique existe déja"))
             else:
+
                 inventaire.ls_animaux.append(animal_t)
                 self.bruteForceClose = True
                 self.close()

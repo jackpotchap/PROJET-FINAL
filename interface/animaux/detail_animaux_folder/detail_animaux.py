@@ -37,9 +37,11 @@ def formatage_dun_attribut(p_attribut:str, p_classe)->str:
     return output
 
 def animal_en_list_de_string(animal):
-
+    """
+    Fonction qui vas convertir un animal en une list de str prêt â etre affiché dans un list view.
+    """
     dict_a = animal.__stre__()
-    print(dict_a)
+
     output = []
     output += f"Nom : {dict_a['_Animal__nom_animal']}",
     output += f"Espèce : {dict_a['_Animal__espece_animal']}",
@@ -67,6 +69,7 @@ class DetailAnimaux(QtWidgets.QDialog, detail_animaux_interface.Ui_Dialog):
         self.setWindowTitle("Gestion de Zoo - Details d'un animaux")
         cacher_lables_erreure(self)
 
+        #initialisation de la list view
         model = QStandardItemModel()
         self.listView_ls_animal_detail_animaux.setModel(model)
         for row in animal_en_list_de_string(self.animal):
@@ -76,6 +79,8 @@ class DetailAnimaux(QtWidgets.QDialog, detail_animaux_interface.Ui_Dialog):
         self.label_id_information_detail_animaux.setText(self.animal.__dict__["_Animal__id_animal"])
         self.label_classe_information_detail_animaux.setText(inventaire.dict_translate_object_to_dict[type(self.animal)])
 
+
+        #message alerte anoncant que un animal n'as pas enclos
         trouver = False
         for e in inventaire.ls_enclos:
 

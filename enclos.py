@@ -7,7 +7,7 @@
 ###  Description du fichier: Class Enclos
 ####################################################################################
 import json
-
+import copy
 
 class Enclos:
     """
@@ -24,14 +24,16 @@ class Enclos:
         self.__id_enclos = p_id
 
     # j'ai l'intention de faire un affichage dans une liste view donc pour me faciliter la tache je lais mis dans un dictionnaire
+
     def __str__(self):
-        output = self.__dict__
+        output = self.__dict__.copy()
 
         ls_animale_t = []
         for a in self.Ls_animaux_enclos:
             dict_t = a.__dict__
-            dict_t["_Animal__enclos_animal"] = a.ID
+            dict_t["_Animal__enclos_animal"] = a.Id_animal
             ls_animale_t.append(dict_t)
+
 
         return str(output)
 
@@ -41,10 +43,14 @@ class Enclos:
            Méthode pour sérialiser un object de la classe enclos.
            ::param p_fichier : Le nom du fichier de l'enclos.
         """
-        output = self.__dict__
+        output = self.__dict__.copy()
         ls_animale_t = []
+
+        #je sérialiase également les aniamux de la list
         for a in self.Ls_animaux_enclos:
-            dict_t = a.__dict__
+            dict_t = a.__dict__.copy()
+
+            #par contre pour éviter un inifinite loop l'enclos de l'animal seras seulement représenté par son ID
             dict_t["_Animal__enclos_animal"] = self.Id_enclos
             ls_animale_t.append(dict_t)
 
@@ -63,6 +69,8 @@ class Enclos:
         trouver = False
         with open(p_fichier, "r") as fichier:
             self.__dict__ = json.load(fichier)
+
+            #si jamais l'utilisateur shouhaite importer la list des autres aniamux
             if importer_animaux:
                 pass
             else:
